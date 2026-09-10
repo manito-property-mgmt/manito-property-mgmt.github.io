@@ -2,8 +2,6 @@
 
 Official website for **Manito Property Management** (formerly Century 21 Property Management), serving Spokane, Spokane Valley, Cheney, Liberty Lake, and surrounding areas.
 
-Cloned and modernized from [spokanearearentals.com](https://www.spokanearearentals.com/) into a fast, responsive Next.js application under `mpm_site`.
-
 ## Live URL & Domains
 - Custom Domain: [manitopropertymgmt.com](https://manitopropertymgmt.com)
 - GitHub Pages Root: [https://manito-property-mgmt.github.io/](https://manito-property-mgmt.github.io/)
