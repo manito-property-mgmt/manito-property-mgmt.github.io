@@ -1,24 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
-  Phone,
-  Clock,
   Menu,
   X,
   ChevronDown,
   User,
   ShieldCheck,
   FileText,
+  ExternalLink,
 } from "lucide-react";
+
+interface NavChild {
+  label: string;
+  href: string;
+  external?: boolean;
+}
 
 interface NavItem {
   label: string;
   href?: string;
-  children?: { label: string; href: string }[];
+  children?: NavChild[];
 }
 
 const navItems: NavItem[] = [
@@ -28,13 +33,23 @@ const navItems: NavItem[] = [
     children: [
       { label: "Available Rentals", href: "/available-rentals/" },
       { label: "Our Portfolio", href: "/our-portfolio/" },
+      {
+        label: "Apply Online",
+        href: "https://manitopm.quickleasepro.com/",
+        external: true,
+      },
     ],
   },
   {
     label: "Tenants",
     children: [
-      { label: "Maintenance Request", href: "/maintenance-request/" },
+      {
+        label: "Tenant Login (AppFolio)",
+        href: "https://spokanearearentals.appfolio.com/connect/users/sign_in",
+        external: true,
+      },
       { label: "Tenant Portal", href: "/tenant-portal/" },
+      { label: "Maintenance Request", href: "/maintenance-request/" },
       { label: "Tenant Resources", href: "/tenant-resources/" },
       { label: "Evacuation Plans", href: "/evacuation-plans/" },
     ],
@@ -42,18 +57,18 @@ const navItems: NavItem[] = [
   {
     label: "Owners",
     children: [
+      {
+        label: "Owner Login (AppFolio)",
+        href: "https://spokanearearentals.appfolio.com/oportal/users/log_in",
+        external: true,
+      },
       { label: "Owner Portal", href: "/owner-portal/" },
       { label: "Owner Resources", href: "/owner-resources/" },
     ],
   },
   {
     label: "Real Estate Agents",
-    children: [
-      {
-        label: "Real Estate Agent Services",
-        href: "/real-estate-agent-services/",
-      },
-    ],
+    href: "/real-estate-agent-services/",
   },
   {
     label: "Management Services",
@@ -72,6 +87,63 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (label: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpenDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 250);
+  };
+
+  const toggleDropdown = (label: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpenDropdown((prev) => (prev === label ? null : label));
+  };
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        if (closeTimeoutRef.current) {
+          clearTimeout(closeTimeoutRef.current);
+          closeTimeoutRef.current = null;
+        }
+        setOpenDropdown(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Close dropdown and mobile menu on route changes
+  useEffect(() => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpenDropdown(null);
+    closeMobile();
+  }, [pathname]);
 
   const closeMobile = () => {
     setMobileOpen(false);
@@ -84,76 +156,18 @@ export default function Navbar() {
       if (item.href !== "/" && pathname.startsWith(item.href)) return true;
     }
     if (item.children) {
-      return item.children.some((child) => pathname.startsWith(child.href));
+      return item.children.some(
+        (child) => !child.external && pathname.startsWith(child.href)
+      );
     }
     return false;
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm transition-all">
-      {/* Top Utility / Contact Bar */}
-      <div className="bg-[#1f2937] text-gray-200 text-xs py-2 px-4 border-b border-gray-700">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-y-2">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
-            <a
-              href="tel:5092428140"
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-blue-400" />
-              <span>Office: <strong className="text-white font-semibold">(509) 242-8140</strong></span>
-            </a>
-            <a
-              href="tel:5092428144"
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Showings & Info: <strong className="text-white font-semibold">(509) 242-8144</strong></span>
-            </a>
-            <a
-              href="tel:5092428142"
-              className="hidden sm:flex items-center gap-1.5 hover:text-red-300 transition-colors text-red-200"
-            >
-              <Phone className="w-3.5 h-3.5 text-red-400" />
-              <span>Emergency: <strong className="text-white font-semibold">(509) 242-8142</strong></span>
-            </a>
-            <div className="hidden md:flex items-center gap-1.5 text-gray-400">
-              <Clock className="w-3.5 h-3.5" />
-              <span>Mon-Fri 9:00am - 5:00pm</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-gray-300 hover:text-white px-2 py-0.5 rounded bg-gray-800 hover:bg-gray-700 transition"
-            >
-              <User className="w-3 h-3 text-blue-400" />
-              <span>Tenant Login</span>
-            </a>
-            <a
-              href="https://spokanearearentals.appfolio.com/oportal/users/log_in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-gray-300 hover:text-white px-2 py-0.5 rounded bg-gray-800 hover:bg-gray-700 transition"
-            >
-              <ShieldCheck className="w-3 h-3 text-amber-400" />
-              <span>Owner Login</span>
-            </a>
-            <a
-              href="https://manitopm.quickleasepro.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-1 text-white bg-blue-600 hover:bg-blue-700 px-2.5 py-0.5 rounded font-medium transition"
-            >
-              <FileText className="w-3 h-3" />
-              <span>Apply Now</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 bg-white shadow-sm transition-all border-b border-gray-100"
+    >
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -171,7 +185,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1">
             {navItems.map((item) => {
               const active = isActive(item);
               if (item.children) {
@@ -180,14 +194,15 @@ export default function Navbar() {
                   <div
                     key={item.label}
                     className="relative"
-                    onMouseEnter={() => setOpenDropdown(item.label)}
-                    onMouseLeave={() => setOpenDropdown(null)}
+                    onMouseEnter={() => handleMouseEnter(item.label)}
+                    onMouseLeave={handleMouseLeave}
                   >
                     <button
                       type="button"
+                      onClick={() => toggleDropdown(item.label)}
                       aria-expanded={isOpen}
-                      className={`inline-flex items-center gap-1 px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors rounded-md ${
-                        active
+                      className={`inline-flex items-center gap-1 px-2 2xl:px-2.5 py-2 text-[11px] 2xl:text-xs font-bold tracking-wider uppercase transition-colors rounded-md ${
+                        active || isOpen
                           ? "text-[#415161] border-b-2 border-[#415161]"
                           : "text-gray-700 hover:text-[#415161] hover:bg-gray-50"
                       }`}
@@ -200,25 +215,46 @@ export default function Navbar() {
                       />
                     </button>
 
-                    {/* Dropdown Menu */}
+                    {/* Dropdown Menu with hover bridge */}
                     {isOpen && (
-                      <div className="absolute left-0 mt-0.5 w-60 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                        {item.children.map((child) => {
-                          const childActive = pathname.startsWith(child.href);
-                          return (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              className={`block px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-colors ${
-                                childActive
-                                  ? "bg-slate-100 text-[#415161] font-bold"
-                                  : "text-gray-600 hover:bg-slate-50 hover:text-[#415161]"
-                              }`}
-                            >
-                              {child.label}
-                            </Link>
-                          );
-                        })}
+                      <div
+                        className="absolute left-0 top-full pt-1.5 w-64 z-50 animate-in fade-in slide-in-from-top-1 duration-150"
+                        onMouseEnter={() => handleMouseEnter(item.label)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2">
+                          {item.children.map((child) => {
+                            if (child.external) {
+                              return (
+                                <a
+                                  key={child.href}
+                                  href={child.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center justify-between px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-colors text-gray-600 hover:bg-slate-50 hover:text-[#415161] group"
+                                >
+                                  <span>{child.label}</span>
+                                  <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-[#415161]" />
+                                </a>
+                              );
+                            }
+
+                            const childActive = pathname.startsWith(child.href);
+                            return (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                className={`block px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-colors ${
+                                  childActive
+                                    ? "bg-slate-100 text-[#415161] font-bold"
+                                    : "text-gray-600 hover:bg-slate-50 hover:text-[#415161]"
+                                }`}
+                              >
+                                {child.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
                       </div>
                     )}
                   </div>
@@ -229,7 +265,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href!}
-                  className={`px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors rounded-md ${
+                  className={`px-2 2xl:px-2.5 py-2 text-[11px] 2xl:text-xs font-bold tracking-wider uppercase transition-colors rounded-md ${
                     active
                       ? "text-[#415161] border-b-2 border-[#415161]"
                       : "text-gray-700 hover:text-[#415161] hover:bg-gray-50"
@@ -241,15 +277,117 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Desktop Right Actions: Login Dropdown & Apply Now CTA */}
+          <div className="hidden xl:flex items-center gap-2 flex-shrink-0 ml-2 pl-3 border-l border-gray-200">
+            {/* Login Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("Login")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                type="button"
+                onClick={() => toggleDropdown("Login")}
+                aria-expanded={openDropdown === "Login"}
+                className={`inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors rounded-md border ${
+                  openDropdown === "Login"
+                    ? "bg-slate-100 text-[#415161] border-gray-300"
+                    : "border-gray-200 text-gray-700 hover:text-[#415161] hover:bg-gray-50"
+                }`}
+              >
+                <User className="w-3.5 h-3.5 text-[#415161]" />
+                <span>Login</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    openDropdown === "Login"
+                      ? "rotate-180 text-[#415161]"
+                      : "text-gray-400"
+                  }`}
+                />
+              </button>
+
+              {/* Login Dropdown Card with hover bridge */}
+              {openDropdown === "Login" && (
+                <div
+                  className="absolute right-0 top-full pt-1.5 w-64 z-50 animate-in fade-in slide-in-from-top-1 duration-150"
+                  onMouseEnter={() => handleMouseEnter("Login")}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2">
+                    <div className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-gray-400">
+                      Client Portals
+                    </div>
+                    <a
+                      href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-4 py-2 hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="text-xs font-bold uppercase tracking-wider text-gray-800 group-hover:text-[#415161]">
+                        Tenant Login
+                      </div>
+                      <div className="text-[11px] text-gray-500 font-normal">
+                        Pay rent & maintenance requests
+                      </div>
+                    </a>
+
+                    <a
+                      href="https://spokanearearentals.appfolio.com/oportal/users/log_in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-4 py-2 hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="text-xs font-bold uppercase tracking-wider text-gray-800 group-hover:text-[#415161]">
+                        Owner Login
+                      </div>
+                      <div className="text-[11px] text-gray-500 font-normal">
+                        Monthly statements & financials
+                      </div>
+                    </a>
+
+                    <div className="my-1.5 border-t border-gray-100" />
+
+                    <div className="px-4 py-1 flex items-center justify-between text-[11px]">
+                      <Link
+                        href="/tenant-portal/"
+                        className="text-[#415161] hover:text-blue-600 hover:underline font-medium"
+                      >
+                        Tenant Portal Info
+                      </Link>
+                      <span className="text-gray-300">•</span>
+                      <Link
+                        href="/owner-portal/"
+                        className="text-[#415161] hover:text-blue-600 hover:underline font-medium"
+                      >
+                        Owner Portal Info
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Apply Now Primary Button */}
+            <a
+              href="https://manitopm.quickleasepro.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold tracking-wider uppercase text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm transition-colors"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Apply Now</span>
+            </a>
+          </div>
+
+          {/* Mobile Action Controls: Apply Button & Hamburger Menu */}
           <div className="flex xl:hidden items-center gap-2">
             <a
               href="https://manitopm.quickleasepro.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold uppercase tracking-wider bg-[#415161] text-white px-3 py-1.5 rounded"
+              className="text-xs font-bold uppercase tracking-wider bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded shadow-sm transition"
             >
-              Apply
+              Apply Now
             </a>
             <button
               type="button"
@@ -266,25 +404,36 @@ export default function Navbar() {
       {/* Mobile Drawer Menu */}
       {mobileOpen && (
         <div className="xl:hidden bg-white border-t border-gray-200 px-4 pt-3 pb-6 max-h-[85vh] overflow-y-auto shadow-2xl">
-          {/* Quick Action Buttons on Mobile */}
-          <div className="grid grid-cols-2 gap-2 mb-4 pb-3 border-b border-gray-100 text-center">
+          {/* Prominent Mobile Portals & Application Header */}
+          <div className="space-y-2 mb-4 pb-4 border-b border-gray-200">
+            <div className="grid grid-cols-2 gap-2 text-center">
+              <a
+                href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#1f2937] hover:bg-slate-800 text-white py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm transition"
+              >
+                <User className="w-3.5 h-3.5 text-blue-400" />
+                <span>Tenant Login</span>
+              </a>
+              <a
+                href="https://spokanearearentals.appfolio.com/oportal/users/log_in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#1f2937] hover:bg-slate-800 text-white py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm transition"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+                <span>Owner Login</span>
+              </a>
+            </div>
             <a
-              href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
+              href="https://manitopm.quickleasepro.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-slate-800 text-white py-2 px-3 rounded text-xs font-semibold flex items-center justify-center gap-1.5"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
             >
-              <User className="w-3.5 h-3.5" />
-              <span>Tenant Login</span>
-            </a>
-            <a
-              href="https://spokanearearentals.appfolio.com/oportal/users/log_in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-slate-700 text-white py-2 px-3 rounded text-xs font-semibold flex items-center justify-center gap-1.5"
-            >
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Owner Login</span>
+              <FileText className="w-4 h-4" />
+              <span>Apply Online Now</span>
             </a>
           </div>
 
@@ -313,20 +462,38 @@ export default function Navbar() {
                     </button>
                     {isExpanded && (
                       <div className="pl-4 pb-2 space-y-1 bg-slate-50 rounded-lg p-2 mt-1">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={closeMobile}
-                            className={`block py-1.5 text-xs font-medium uppercase tracking-wide ${
-                              pathname.startsWith(child.href)
-                                ? "text-[#415161] font-bold"
-                                : "text-gray-600 hover:text-black"
-                            }`}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                        {item.children.map((child) => {
+                          if (child.external) {
+                            return (
+                              <a
+                                key={child.href}
+                                href={child.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={closeMobile}
+                                className="flex items-center justify-between py-1.5 text-xs font-medium uppercase tracking-wide text-gray-600 hover:text-black"
+                              >
+                                <span>{child.label}</span>
+                                <ExternalLink className="w-3.5 h-3.5 text-gray-400" />
+                              </a>
+                            );
+                          }
+
+                          return (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={closeMobile}
+                              className={`block py-1.5 text-xs font-medium uppercase tracking-wide ${
+                                pathname.startsWith(child.href)
+                                  ? "text-[#415161] font-bold"
+                                  : "text-gray-600 hover:text-black"
+                              }`}
+                            >
+                              {child.label}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

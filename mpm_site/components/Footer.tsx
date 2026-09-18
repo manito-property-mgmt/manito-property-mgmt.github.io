@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 
 function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -111,6 +111,35 @@ export default function Footer() {
                 >
                   Maintenance Requests
                 </Link>
+              </li>
+              <li className="pt-1.5 border-t border-gray-700/60 flex flex-col gap-1.5">
+                <a
+                  href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white text-blue-400 font-semibold transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span>Tenant Login (AppFolio)</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+                <a
+                  href="https://spokanearearentals.appfolio.com/oportal/users/log_in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white text-amber-400 font-semibold transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span>Owner Login (AppFolio)</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+                <a
+                  href="https://manitopm.quickleasepro.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white text-emerald-400 font-semibold transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span>Apply Online (QuickLeasePro)</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </li>
             </ul>
           </div>
