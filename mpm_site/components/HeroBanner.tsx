@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 interface ButtonConfig {
-  label: string;
+  label: React.ReactNode;
   href: string;
   isExternal?: boolean;
   variant?: "primary" | "secondary" | "outline";
@@ -10,7 +10,7 @@ interface ButtonConfig {
 
 interface HeroBannerProps {
   backgroundImage: string;
-  title: React.ReactNode;
+  title?: React.ReactNode;
   subtitle?: React.ReactNode;
   buttons?: ButtonConfig[];
   minHeight?: string;
@@ -41,9 +41,11 @@ export default function HeroBanner({
             align === "left" ? "text-left" : "text-center"
           }`}
         >
-          <div className="text-white font-serif font-bold text-2xl sm:text-3xl lg:text-4xl tracking-wide uppercase drop-shadow-md leading-tight">
-            {title}
-          </div>
+          {title && (
+            <div className="text-white font-serif font-bold text-2xl sm:text-3xl lg:text-4xl tracking-wide uppercase drop-shadow-md leading-tight">
+              {title}
+            </div>
+          )}
 
           {subtitle && (
             <div className="text-gray-100 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed drop-shadow">
