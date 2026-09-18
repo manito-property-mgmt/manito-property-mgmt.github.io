@@ -205,7 +205,7 @@ export default function Footer() {
 
         {/* Bottom copyright line */}
         <div className="mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© COPYRIGHT 2015-PRESENT MANITO PROPERTY MANAGEMENT. ALL RIGHTS RESERVED.</p>
+          <p>© COPYRIGHT 2026 MANITO PROPERTY MANAGEMENT. ALL RIGHTS RESERVED.</p>
           <p className="text-gray-450 text-[11px]">
             Manito Property Management does not accept comprehensive portable screening reports.
           </p>

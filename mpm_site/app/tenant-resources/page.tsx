@@ -8,6 +8,7 @@ import {
   Droplet,
   MapPin,
   MailCheck,
+  Scale,
 } from "lucide-react";
 
 export const metadata = {
@@ -177,23 +178,47 @@ export default function TenantResourcesPage() {
             </div>
           </div>
 
-          {/* Additional Moving & Civic Resources */}
+          {/* Additional Tenant Rights, Moving & Civic Resources */}
           <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm space-y-6">
             <h2 className="text-xl font-serif font-bold text-gray-900">
-              Moving & Civic Forms
+              Tenant Rights, Moving & Civic Resources
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <a
+                href="https://my.spokanecity.org/housing/tenants-rights-and-resources/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 hover:border-[#415161] transition group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded bg-blue-100 text-[#415161] flex items-center justify-center flex-shrink-0 group-hover:bg-[#415161] group-hover:text-white transition-colors">
+                    <Scale className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-gray-800 group-hover:text-[#415161] transition-colors">
+                      City of Spokane Tenant Rights
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      Official rights, housing codes & resources
+                    </p>
+                  </div>
+                </div>
+                <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#415161] transition-colors flex-shrink-0" />
+              </a>
+
               <a
                 href="https://moversguide.usps.com/mgo/disclaimer?referral=UMOVE"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition"
+                className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 hover:border-[#415161] transition group"
               >
                 <div className="flex items-center gap-3">
-                  <MailCheck className="w-6 h-6 text-blue-600" />
+                  <div className="w-10 h-10 rounded bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <MailCheck className="w-5 h-5" />
+                  </div>
                   <div>
-                    <h3 className="text-sm font-bold text-gray-800">
+                    <h3 className="text-sm font-bold text-gray-800 group-hover:text-[#415161] transition-colors">
                       USPS Change of Address
                     </h3>
                     <p className="text-xs text-gray-500">
@@ -201,19 +226,21 @@ export default function TenantResourcesPage() {
                     </p>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-gray-400" />
+                <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#415161] transition-colors flex-shrink-0" />
               </a>
 
               <a
                 href="/uploads/6/6/2/9/66293977/vrf_english.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition"
+                className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 hover:border-[#415161] transition group"
               >
                 <div className="flex items-center gap-3">
-                  <FileText className="w-6 h-6 text-emerald-600" />
+                  <div className="w-10 h-10 rounded bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <FileText className="w-5 h-5" />
+                  </div>
                   <div>
-                    <h3 className="text-sm font-bold text-gray-800">
+                    <h3 className="text-sm font-bold text-gray-800 group-hover:text-[#415161] transition-colors">
                       Voter Registration Form
                     </h3>
                     <p className="text-xs text-gray-500">
@@ -221,7 +248,7 @@ export default function TenantResourcesPage() {
                     </p>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-gray-400" />
+                <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#415161] transition-colors flex-shrink-0" />
               </a>
             </div>
           </div>

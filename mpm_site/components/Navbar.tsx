@@ -170,16 +170,21 @@ export default function Navbar() {
     >
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 sm:h-28 lg:h-32">
           {/* Brand Logo */}
-          <Link href="/" className="flex-shrink-0 flex items-center group">
-            <div className="relative w-48 sm:w-56 h-14">
+          <Link
+            href="/"
+            className="flex-shrink-0 flex items-center py-2 mr-6 sm:mr-8 xl:mr-12 2xl:mr-16 group focus:outline-none"
+            aria-label="Manito Property Management - Home"
+          >
+            <div className="relative flex items-center justify-center p-1.5 sm:p-2 lg:p-2.5 rounded-lg sm:rounded-xl border border-slate-200/90 bg-white shadow-[0_2px_6px_rgba(0,0,0,0.06)] ring-1 ring-slate-900/5 group-hover:border-[#415161]/50 group-hover:shadow-md transition-all duration-200">
               <Image
                 src="/uploads/6/6/2/9/66293977/published/manito-pm-logo-blue-black-final-1.jpg"
                 alt="Manito Property Management"
-                fill
+                width={350}
+                height={200}
                 priority
-                className="object-contain object-left"
+                className="h-14 sm:h-16 lg:h-20 xl:h-[84px] w-auto object-contain block group-hover:scale-[1.02] transition-transform duration-200"
               />
             </div>
           </Link>
