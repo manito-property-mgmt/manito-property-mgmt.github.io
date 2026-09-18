@@ -47,6 +47,7 @@ const navItems: NavItem[] = [
   {
     label: "Owners",
     children: [
+      { label: "Management Services", href: "/management-services/" },
       { label: "Owner Portal", href: "/owner-portal/" },
       { label: "Owner Resources", href: "/owner-resources/" },
     ],
@@ -54,13 +55,6 @@ const navItems: NavItem[] = [
   {
     label: "Real Estate Agents",
     href: "/real-estate-agent-services/",
-  },
-  {
-    label: "Management Services",
-    children: [
-      { label: "Management Services", href: "/management-services/" },
-      { label: "Our Portfolio", href: "/our-portfolio1/" },
-    ],
   },
   { label: "Rental Criteria", href: "/rental-criteria/" },
   { label: "Contact Us", href: "/contact-us/" },
