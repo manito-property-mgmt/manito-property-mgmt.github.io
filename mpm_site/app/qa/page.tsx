@@ -18,14 +18,14 @@ export default function QAPage() {
         subtitle="Find quick answers to common questions for tenants, applicants, and property owners."
       />
 
-      <div className="py-14 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="py-12 sm:py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <QAAccordion />
 
           {/* Still have questions banner */}
-          <div className="bg-[#415161] text-white rounded-xl p-8 text-center space-y-4">
-            <h3 className="text-xl font-serif font-bold">
-              Still Have a Question?
+          <div className="bg-[#415161] text-white rounded-xl p-8 sm:p-10 text-center space-y-4 max-w-4xl mx-auto shadow-sm">
+            <h3 className="text-2xl font-bold">
+              Still have questions?
             </h3>
             <p className="text-sm text-gray-200 max-w-lg mx-auto">
               Our team is happy to assist you by phone Monday – Friday from 9am to 5pm or through our online contact form.

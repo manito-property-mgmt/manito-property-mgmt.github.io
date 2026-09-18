@@ -2,14 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import {
-  ChevronDown,
-  HelpCircle,
-  Users,
-  Home,
-  UserCheck,
-  ExternalLink,
-} from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 
 interface FAQItem {
   q: string;
@@ -19,7 +12,6 @@ interface FAQItem {
 interface FAQSection {
   title: string;
   category: string;
-  icon: React.ElementType;
   items: FAQItem[];
 }
 
@@ -39,7 +31,6 @@ export default function QAAccordion() {
     {
       title: "General Questions",
       category: "gen",
-      icon: HelpCircle,
       items: [
         {
           q: "How do I get more information?",
@@ -98,7 +89,6 @@ export default function QAAccordion() {
     {
       title: "For our Applicants",
       category: "app",
-      icon: UserCheck,
       items: [
         {
           q: "How do I apply for a rental?",
@@ -179,7 +169,6 @@ export default function QAAccordion() {
     {
       title: "For our Tenants",
       category: "ten",
-      icon: Users,
       items: [
         {
           q: "How do I pay my rent?",
@@ -252,7 +241,6 @@ export default function QAAccordion() {
     {
       title: "For our Owners",
       category: "own",
-      icon: Home,
       items: [
         {
           q: "What do you charge for management services?",
@@ -320,19 +308,15 @@ export default function QAAccordion() {
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start">
       {faqSections.map((section) => {
-        const SectionIcon = section.icon;
         return (
           <div
             key={section.category}
-            className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6"
+            className="bg-white rounded-xl p-5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm space-y-5 sm:space-y-6"
           >
-            <div className="flex items-center gap-3 border-b border-gray-100 pb-4">
-              <div className="w-10 h-10 rounded-lg bg-blue-50 text-[#415161] flex items-center justify-center">
-                <SectionIcon className="w-5 h-5" />
-              </div>
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-gray-900">
+            <div className="border-b border-gray-100 pb-3 sm:pb-4">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
                 {section.title}
               </h2>
             </div>
@@ -350,9 +334,9 @@ export default function QAAccordion() {
                     <button
                       type="button"
                       onClick={() => toggleItem(itemKey)}
-                      className="w-full flex items-center justify-between p-4 sm:p-5 text-left bg-slate-50 hover:bg-slate-100/80 transition"
+                      className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left bg-slate-50 hover:bg-slate-100/80 transition"
                     >
-                      <span className="font-serif font-bold text-sm sm:text-base text-gray-900 pr-4">
+                      <span className="font-semibold text-sm sm:text-base text-gray-900 pr-3 sm:pr-4">
                         {item.q}
                       </span>
                       <ChevronDown
@@ -363,7 +347,7 @@ export default function QAAccordion() {
                     </button>
 
                     {isOpen && (
-                      <div className="p-4 sm:p-5 bg-white text-sm text-gray-700 leading-relaxed border-t border-gray-200">
+                      <div className="p-3.5 sm:p-5 bg-white text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-200">
                         {item.a}
                       </div>
                     )}
