@@ -33,21 +33,11 @@ const navItems: NavItem[] = [
     children: [
       { label: "Available Rentals", href: "/available-rentals/" },
       { label: "Our Portfolio", href: "/our-portfolio/" },
-      {
-        label: "Apply Online",
-        href: "https://manitopm.quickleasepro.com/",
-        external: true,
-      },
     ],
   },
   {
     label: "Tenants",
     children: [
-      {
-        label: "Tenant Login (AppFolio)",
-        href: "https://spokanearearentals.appfolio.com/connect/users/sign_in",
-        external: true,
-      },
       { label: "Tenant Portal", href: "/tenant-portal/" },
       { label: "Maintenance Request", href: "/maintenance-request/" },
       { label: "Tenant Resources", href: "/tenant-resources/" },
@@ -57,11 +47,6 @@ const navItems: NavItem[] = [
   {
     label: "Owners",
     children: [
-      {
-        label: "Owner Login (AppFolio)",
-        href: "https://spokanearearentals.appfolio.com/oportal/users/log_in",
-        external: true,
-      },
       { label: "Owner Portal", href: "/owner-portal/" },
       { label: "Owner Resources", href: "/owner-resources/" },
     ],
