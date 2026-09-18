@@ -1,44 +1,41 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Calendar, AlertCircle, ExternalLink, Shield } from "lucide-react";
+import { Calendar, AlertCircle, ExternalLink, Shield, Loader2 } from "lucide-react";
 
 export default function AvailableRentalsClient() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [iframeHeight, setIframeHeight] = useState("950px");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Dynamically inject Appfolio listing script if not already present
-    const scriptId = "appfolio-listing-script";
-    const existingScript = document.getElementById(scriptId);
+    // Listen for resize messages sent by the AppFolio listings iframe
+    const handleMessage = (e: MessageEvent) => {
+      try {
+        const dataFromIframe =
+          typeof e.data === "string" ? JSON.parse(e.data) : e.data;
+        if (!dataFromIframe) return;
 
-    const initListing = () => {
-      // @ts-expect-error Appfolio is attached to window
-      if (window.Appfolio && window.Appfolio.Listing) {
-        // @ts-expect-error Appfolio is attached to window
-        window.Appfolio.Listing({
-          hostUrl: "spokanearearentals.appfolio.com",
-          themeColor: "#415161",
-          height: "900px",
-          width: "100%",
-          defaultOrder: "date_available",
-        });
+        const { eventType, data, iframe_id } = dataFromIframe;
+
+        if (iframe_id === "af_iframe_listings") {
+          if (eventType === "new_height" && typeof data === "number") {
+            setIframeHeight(`${data + 30}px`);
+            setIsLoading(false);
+          } else if (eventType === "scrollToTop") {
+            const wrapper = document.getElementById("appfolio-listings-wrapper");
+            wrapper?.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      } catch {
+        // Ignore non-JSON messages from other extensions or tools
       }
     };
 
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.src = "https://spokanearearentals.appfolio.com/javascripts/listing.js";
-      script.type = "text/javascript";
-      script.async = true;
-      script.onload = () => {
-        initListing();
-      };
-      document.body.appendChild(script);
-    } else {
-      initListing();
-    }
+    window.addEventListener("message", handleMessage);
+    return () => {
+      window.removeEventListener("message", handleMessage);
+    };
   }, []);
 
   return (
@@ -118,24 +115,29 @@ export default function AvailableRentalsClient() {
 
           <div
             id="appfolio-listings-wrapper"
-            ref={containerRef}
-            className="w-full min-h-[500px]"
+            className="relative w-full min-h-[600px]"
           >
-            {/* The Appfolio script injects the listings iframe/markup here */}
-            <div className="text-center py-12 space-y-4">
-              <p className="text-gray-500 text-sm">
-                Loading available listings from AppFolio Property Manager...
-              </p>
-              <a
-                href="https://spokanearearentals.appfolio.com/listings"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded text-xs font-bold uppercase tracking-wider"
-              >
-                <span>View Listings Directly on AppFolio</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
+            {isLoading && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center py-16 bg-white/90 z-10">
+                <Loader2 className="w-8 h-8 text-[#415161] animate-spin mb-3" />
+                <p className="text-sm text-gray-600 font-medium">
+                  Loading available listings from AppFolio...
+                </p>
+              </div>
+            )}
+
+            <iframe
+              id="af_iframe_listings"
+              title="Available Rental Properties"
+              src="https://spokanearearentals.appfolio.com/listings?theme_color=%23415161&filters%5Border_by%5D=date_available&iframe_id=af_iframe_listings"
+              style={{
+                width: "100%",
+                height: iframeHeight,
+                border: 0,
+              }}
+              onLoad={() => setIsLoading(false)}
+              className="w-full transition-all duration-200"
+            />
           </div>
         </div>
       </div>
