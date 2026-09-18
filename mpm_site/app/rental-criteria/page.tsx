@@ -56,7 +56,7 @@ export default function RentalCriteriaPage() {
           {
             label: "View Available Rentals",
             href: "/available-rentals/",
-            variant: "secondary",
+            variant: "primary",
           },
         ]}
       />

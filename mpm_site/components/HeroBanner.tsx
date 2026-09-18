@@ -23,7 +23,7 @@ export default function HeroBanner({
   title,
   subtitle,
   buttons,
-  minHeight = "min-h-[380px] lg:min-h-[440px]",
+  minHeight = "min-h-[220px] sm:min-h-[250px] lg:min-h-[280px]",
   align = "center",
   overlayOpacity = "bg-slate-900/65",
 }: HeroBannerProps) {
@@ -35,9 +35,9 @@ export default function HeroBanner({
       {/* Dark tint overlay for text contrast */}
       <div className={`absolute inset-0 ${overlayOpacity} backdrop-brightness-95`} />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 text-center">
         <div
-          className={`space-y-4 ${
+          className={`space-y-3 sm:space-y-4 ${
             align === "left" ? "text-left" : "text-center"
           }`}
         >
@@ -54,16 +54,16 @@ export default function HeroBanner({
           )}
 
           {buttons && buttons.length > 0 && (
-            <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+            <div className="pt-3 sm:pt-4 flex flex-wrap items-center justify-center gap-4">
               {buttons.map((btn, idx) => {
                 const isPrimary = btn.variant === "primary" || !btn.variant;
                 const baseClass =
-                  "inline-flex items-center justify-center px-6 py-2.5 rounded font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md";
+                  "inline-flex items-center justify-center px-6 py-2.5 rounded font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md border-2 border-white";
                 const variantClass = isPrimary
-                  ? "bg-[#415161] hover:bg-[#32404e] text-white border border-[#415161]"
+                  ? "bg-[#415161] hover:bg-[#32404e] text-white"
                   : btn.variant === "secondary"
-                  ? "bg-white hover:bg-gray-100 text-[#415161] border border-white"
-                  : "bg-transparent hover:bg-white/20 text-white border border-white";
+                  ? "bg-white hover:bg-gray-100 text-[#415161]"
+                  : "bg-transparent hover:bg-white/20 text-white";
 
                 if (btn.isExternal) {
                   return (

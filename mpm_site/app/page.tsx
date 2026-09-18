@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* Hero Banner */}
       <HeroBanner
         backgroundImage="/uploads/6/6/2/9/66293977/background-images/427901462.jpg"
-        minHeight="min-h-[480px] lg:min-h-[550px]"
+        minHeight="min-h-[320px] sm:min-h-[350px] lg:min-h-[380px]"
         overlayOpacity="bg-slate-900/60"
         title={
           <span className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider">
