@@ -1,6 +1,6 @@
 import React from "react";
 import HeroBanner from "@/components/HeroBanner";
-import { CheckCircle2, Clock, CreditCard, ExternalLink, Lock } from "lucide-react";
+import { CheckCircle2, Clock, Lock } from "lucide-react";
 
 export const metadata = {
   title: "Tenant Portal - Online Rent Payments & Requests",
@@ -12,7 +12,7 @@ export default function TenantPortalPage() {
   return (
     <div>
       <HeroBanner
-        backgroundImage="/uploads/6/6/2/9/66293977/background-images/1087021670.jpg"
+        backgroundImage="/uploads/6/6/2/9/66293977/background-images/houseD.jpg"
         title="Did you know that you can now pay your rent online?"
         subtitle="It’s fast, easy, and secure, so why wait? Below, you’ll find some information on how to get started and a few reasons why so many others have already made the switch!"
         buttons={[
@@ -35,14 +35,9 @@ export default function TenantPortalPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           {/* Benefits Section */}
           <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-blue-100 text-[#415161] flex items-center justify-center">
-                <CreditCard className="w-5 h-5" />
-              </div>
-              <h2 className="text-2xl font-serif font-bold text-gray-900">
-                Tenant Portal Benefits
-              </h2>
-            </div>
+            <h2 className="text-2xl font-serif font-bold text-gray-900">
+              Tenant Portal Benefits
+            </h2>
 
             <p className="text-gray-700 text-sm sm:text-base">
               Once you’ve signed up, you can:
@@ -105,35 +100,6 @@ export default function TenantPortalPage() {
                 transactions are both encrypted and securely transmitted using
                 industry-standard bank-level security protocols provided by AppFolio.
               </p>
-            </div>
-          </div>
-
-          {/* Call to action card */}
-          <div className="bg-[#415161] rounded-xl p-8 text-white text-center space-y-4">
-            <h3 className="text-xl sm:text-2xl font-serif font-bold">
-              Ready to Pay Online or Access Your Account?
-            </h3>
-            <p className="text-gray-200 text-sm max-w-xl mx-auto">
-              Get started with online rent payments today or sign into your existing AppFolio tenant portal.
-            </p>
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded bg-white text-[#415161] hover:bg-gray-100 text-xs font-bold uppercase tracking-wider transition-colors shadow"
-              >
-                <span>Login to Portal</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-              <a
-                href="https://spokanearearentals.appfolio.com/connect/users/request_access"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded border border-white text-white hover:bg-white/10 text-xs font-bold uppercase tracking-wider transition-colors"
-              >
-                <span>Request Account Access</span>
-              </a>
             </div>
           </div>
         </div>
