@@ -19,27 +19,12 @@ export default function HomePage() {
           </span>
         }
         subtitle={
-          <div className="space-y-3 pt-2 text-gray-200">
-            <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto font-normal leading-relaxed">
-              If you are a current tenant, owner or vendor please contact us by
-              phone Monday-Friday 9am-5pm at{" "}
-              <a
-                href="tel:5092428140"
-                className="font-bold text-white underline hover:text-blue-300"
-              >
-                (509) 242-8140
-              </a>
-              . If you are inquiring about a property or have questions about our
-              application process please contact directly at{" "}
-              <a
-                href="tel:5092428144"
-                className="font-bold text-white underline hover:text-blue-300"
-              >
-                (509) 242-8144
-              </a>
-              .
-            </p>
-          </div>
+          <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto font-normal leading-relaxed text-gray-200 pt-2">
+            Manito Property Management is locally owned and operating in Spokane,
+            Washington, committed to making all things property management and
+            real estate a seamless experience for our tenants, owners, and
+            clients.
+          </p>
         }
         buttons={[
           {

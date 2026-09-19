@@ -16,7 +16,29 @@ export default function ContactUsPage() {
       <HeroBanner
         backgroundImage="/uploads/6/6/2/9/66293977/background-images/301876886.jpg"
         title="Contact Us"
-        subtitle="For all general inquiries, showings, and maintenance requests, our Spokane team is here to help."
+        subtitle={
+          <div className="space-y-3 pt-2 text-gray-200">
+            <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto font-normal leading-relaxed">
+              If you are a current tenant, owner or vendor please contact us by
+              phone Monday-Friday 9am-5pm at{" "}
+              <a
+                href="tel:5092428140"
+                className="font-bold text-white underline hover:text-blue-300"
+              >
+                (509) 242-8140
+              </a>
+              . If you are inquiring about a property or have questions about our
+              application process please contact directly at{" "}
+              <a
+                href="tel:5092428144"
+                className="font-bold text-white underline hover:text-blue-300"
+              >
+                (509) 242-8144
+              </a>
+              .
+            </p>
+          </div>
+        }
       />
 
       {/* Main Content Area */}
