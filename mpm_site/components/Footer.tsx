@@ -162,11 +162,11 @@ export default function Footer() {
                 <span>Office: <a href="tel:5092428140" className="text-white hover:underline">(509) 242-8140</a></span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <span>Showings: <a href="tel:5092428144" className="text-white hover:underline">(509) 242-8144</a></span>
               </div>
-              <div className="flex items-center gap-2.5 text-red-300">
-                <Phone className="w-4 h-4 text-red-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <span>Emergency: <a href="tel:5092428142" className="text-white hover:underline">(509) 242-8142</a></span>
               </div>
               <div className="flex items-center gap-2.5">

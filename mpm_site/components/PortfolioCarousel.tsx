@@ -80,9 +80,6 @@ export default function PortfolioCarousel() {
         {/* Header row */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-1">
-              Spokane Portfolio
-            </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
               Featured Properties
             </h2>
