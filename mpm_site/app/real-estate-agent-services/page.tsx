@@ -29,7 +29,7 @@ export default function RealEstateAgentServicesPage() {
   return (
     <div>
       <HeroBanner
-        backgroundImage="/uploads/6/6/2/9/66293977/background-images/185086630.jpg"
+        backgroundImage="/uploads/6/6/2/9/66293977/background-images/houseB.jpg"
         title="Real Estate Agent Services"
         subtitle="We are a unique management company that caters to the needs of Real Estate professionals. Our services provide your client the opportunity to utilize their property as a rental until they are ready to sell. This option guarantees that you will get your clients back when they are ready to market."
         buttons={[
