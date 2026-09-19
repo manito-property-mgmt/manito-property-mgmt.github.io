@@ -102,15 +102,23 @@ export default function RealEstateAgentServicesPage() {
               Property Types We Manage
             </h2>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              {propertyTypes.map((type, idx) => (
-                <div
-                  key={idx}
-                  className="p-3 bg-slate-50 border border-slate-200 rounded text-xs font-semibold text-gray-800 text-center"
-                >
-                  {type}
-                </div>
-              ))}
+            <div className="grid grid-cols-2 gap-x-4 sm:gap-x-10 gap-y-3 pt-2">
+              <ul className="space-y-3">
+                {propertyTypes.slice(0, 4).map((type, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-700">
+                    <span className="w-2 h-2 rounded-full bg-[#415161] flex-shrink-0 mt-2" />
+                    <span className="font-medium">{type}</span>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-3">
+                {propertyTypes.slice(4).map((type, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-700">
+                    <span className="w-2 h-2 rounded-full bg-[#415161] flex-shrink-0 mt-2" />
+                    <span className="font-medium">{type}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
