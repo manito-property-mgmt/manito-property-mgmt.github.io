@@ -2,7 +2,6 @@ import React from "react";
 import HeroBanner from "@/components/HeroBanner";
 import PortfolioGallery from "@/components/PortfolioGallery";
 import { residentialPortfolio } from "@/data/portfolio";
-import { CheckCircle2 } from "lucide-react";
 
 export const metadata = {
   title: "Our Portfolio - Types of Properties We Manage",
@@ -39,8 +38,8 @@ export default function OurPortfolioPage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-left max-w-2xl mx-auto">
               {propertyTypes.map((type, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                <div key={idx} className="flex items-center gap-2.5 text-sm text-gray-700">
+                  <span className="w-2 h-2 rounded-full bg-[#415161] flex-shrink-0" />
                   <span className="font-medium">{type}</span>
                 </div>
               ))}
