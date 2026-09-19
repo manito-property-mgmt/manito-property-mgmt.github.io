@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import HeroBanner from "@/components/HeroBanner";
 import { CheckCircle2, Quote } from "lucide-react";
 
@@ -112,30 +111,6 @@ export default function RealEstateAgentServicesPage() {
                   {type}
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="bg-[#415161] text-white rounded-xl p-8 text-center space-y-4">
-            <h3 className="text-xl font-serif font-bold">
-              Have a Client Considering Renting?
-            </h3>
-            <p className="text-sm text-gray-200 max-w-lg mx-auto">
-              Call our broker line or submit an inquiry to discuss management plans and how we can support your client while protecting your sales listing down the road.
-            </p>
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/contact-us/"
-                className="px-6 py-2.5 bg-white text-[#415161] hover:bg-gray-100 rounded text-xs font-bold uppercase tracking-wider shadow"
-              >
-                Get In Touch
-              </Link>
-              <a
-                href="tel:5092428140"
-                className="px-6 py-2.5 border border-white text-white hover:bg-white/10 rounded text-xs font-bold uppercase tracking-wider"
-              >
-                Call: (509) 242-8140
-              </a>
             </div>
           </div>
         </div>
