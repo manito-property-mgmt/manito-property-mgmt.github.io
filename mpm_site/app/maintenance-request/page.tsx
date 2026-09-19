@@ -1,6 +1,6 @@
 import React from "react";
 import HeroBanner from "@/components/HeroBanner";
-import { Wrench, AlertTriangle, Phone, ExternalLink, CheckCircle2, UserCheck } from "lucide-react";
+import { Wrench, AlertTriangle, Phone, ExternalLink, UserCheck } from "lucide-react";
 
 export const metadata = {
   title: "Tenant Maintenance Request",
@@ -31,17 +31,7 @@ export default function MaintenanceRequestPage() {
 
             <p className="text-gray-700 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
               All maintenance requests need to be submitted in writing. Please login
-              to your tenant portal and follow the maintenance request prompts. If you
-              have not yet activated your portal, please{" "}
-              <a
-                href="https://spokanearearentals.appfolio.com/connect/users/request_access"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 font-bold underline hover:text-blue-800"
-              >
-                click here to request access
-              </a>
-              .
+              to your tenant portal and follow the maintenance request prompts.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
@@ -101,9 +91,9 @@ export default function MaintenanceRequestPage() {
                 </span>
                 <a
                   href="tel:5092428142"
-                  className="mt-1 flex items-center gap-2 text-lg font-bold text-red-700 hover:text-red-900"
+                  className="mt-1 flex items-center gap-2 text-lg font-bold text-[#415161] hover:text-blue-700"
                 >
-                  <Phone className="w-5 h-5 text-red-600" />
+                  <Phone className="w-5 h-5 text-blue-600" />
                   <span>(509) 242-8142</span>
                 </a>
               </div>
@@ -116,16 +106,16 @@ export default function MaintenanceRequestPage() {
               Tips for Fast Service:
             </h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-1 flex-shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#415161] mt-2 flex-shrink-0" />
                 <span>Include clear, detailed descriptions of the problem.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-1 flex-shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#415161] mt-2 flex-shrink-0" />
                 <span>Upload photos or short videos directly through the AppFolio tenant portal.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-1 flex-shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#415161] mt-2 flex-shrink-0" />
                 <span>Provide accurate contact numbers and note any pet or access instructions.</span>
               </li>
             </ul>
