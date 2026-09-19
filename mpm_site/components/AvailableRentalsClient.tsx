@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { Calendar, AlertCircle, ExternalLink, Shield, Loader2 } from "lucide-react";
+import HeroBanner from "@/components/HeroBanner";
+import { Calendar, ExternalLink, Loader2 } from "lucide-react";
 
 export default function AvailableRentalsClient() {
   const [iframeHeight, setIframeHeight] = useState("950px");
@@ -39,62 +39,52 @@ export default function AvailableRentalsClient() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12 lg:py-16">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Title Header */}
-        <div className="text-center space-y-3 bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 uppercase tracking-wide">
-            Available Rental Properties
-          </h1>
-          <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+    <div>
+      <HeroBanner
+        backgroundImage="/uploads/6/6/2/9/66293977/background-images/houseC.jpg"
+        title="Available Rentals"
+        subtitle={
+          <span>
             Available properties are updated daily. To schedule a viewing appointment, call our office at{" "}
-            <a href="tel:5092428144" className="font-bold text-[#415161] hover:underline">
+            <a href="tel:5092428144" className="font-bold underline text-white hover:text-gray-200">
               (509) 242-8144
             </a>
             .
-          </p>
+          </span>
+        }
+        buttons={[
+          {
+            label: (
+              <span className="inline-flex items-center gap-2">
+                <span>Apply Here</span>
+                <ExternalLink className="w-4 h-4" />
+              </span>
+            ),
+            href: "https://manitopm.quickleasepro.com/",
+            isExternal: true,
+            variant: "primary",
+          },
+          {
+            label: "View Rental Criteria",
+            href: "/rental-criteria/",
+            variant: "secondary",
+          },
+        ]}
+      />
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-900 rounded-lg text-xs sm:text-sm font-medium">
-            <Calendar className="w-4 h-4 text-blue-600" />
-            <span>Showings available: Monday – Friday, 9:30am – 4:30pm (No weekend or holiday availability)</span>
+      <div className="min-h-screen bg-slate-50 py-12 lg:py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          {/* Showing Information */}
+          <div className="text-center space-y-3 bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-900 rounded-lg text-xs sm:text-sm font-medium">
+              <Calendar className="w-4 h-4 text-blue-600" />
+              <span>Showings available: Monday – Friday, 9:30am – 4:30pm (No weekend or holiday availability)</span>
+            </div>
+
+            <p className="text-xs text-gray-500">
+              All showings are conducted as open house style. We allow a 15-minute grace period past the scheduled time.
+            </p>
           </div>
-
-          <p className="text-xs text-gray-500">
-            All showings are conducted as open house style. We allow a 15-minute grace period past the scheduled time.
-          </p>
-
-          <div className="pt-3 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="https://manitopm.quickleasepro.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded bg-[#415161] hover:bg-[#32404e] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
-            >
-              <span>Apply Here</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
-            <Link
-              href="/rental-criteria/"
-              className="inline-flex items-center gap-1.5 px-6 py-3 rounded border border-gray-300 hover:bg-gray-100 text-gray-700 text-xs font-bold uppercase tracking-wider transition-colors"
-            >
-              <Shield className="w-4 h-4 text-gray-500" />
-              <span>View Rental Criteria</span>
-            </Link>
-          </div>
-        </div>
-
-        {/* Requirements & Notes Banner */}
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 text-amber-900 text-xs sm:text-sm space-y-1.5">
-          <div className="flex items-center gap-2 font-bold text-amber-950">
-            <AlertCircle className="w-4 h-4 text-amber-700 flex-shrink-0" />
-            <span>Important Application Notes:</span>
-          </div>
-          <ul className="list-disc list-inside space-y-1 text-amber-900/90 pl-1">
-            <li>Manito Property Management does not accept comprehensive reusable tenant screening reports.</li>
-            <li>If approved for a rental, a $150 administration/document processing fee is due prior to taking occupancy.</li>
-            <li>Security deposit is equivalent to one month’s rent.</li>
-          </ul>
-        </div>
 
         {/* AppFolio Listing Container */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 sm:p-6 overflow-hidden">
@@ -141,6 +131,7 @@ export default function AvailableRentalsClient() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
