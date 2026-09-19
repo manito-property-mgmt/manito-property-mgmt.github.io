@@ -1,6 +1,6 @@
 import React from "react";
 import HeroBanner from "@/components/HeroBanner";
-import { Download, ShieldAlert, MapPin } from "lucide-react";
+import { Download, MapPin } from "lucide-react";
 
 export const metadata = {
   title: "Tenant Evacuation Plans - Multi-Family Dwellings",
@@ -46,23 +46,16 @@ export default function EvacuationPlansPage() {
     <div>
       <HeroBanner
         backgroundImage="/uploads/6/6/2/9/66293977/background-images/301876886.jpg"
-        title={
-          <span>
-            Tenant Evacuation Plans <span className="text-xl sm:text-2xl font-normal block sm:inline">(multi-family dwellings)</span>
-          </span>
-        }
-        subtitle="Review emergency routes, exits, and safety protocols for your building."
+        title="Tenant Evacuation Plans"
+        subtitle="Review emergency routes, exits, and safety protocols for multi-family dwellings."
       />
 
       <div className="py-14 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm space-y-6">
-            <div className="flex items-center gap-3 text-red-600">
-              <ShieldAlert className="w-6 h-6 flex-shrink-0" />
-              <h2 className="text-xl font-serif font-bold text-gray-900">
-                Building Evacuation Routes
-              </h2>
-            </div>
+            <h2 className="text-xl font-serif font-bold text-gray-900">
+              Building Evacuation Routes
+            </h2>
             <p className="text-sm text-gray-600 leading-relaxed">
               In accordance with Washington State and Spokane Municipal fire safety
               codes, evacuation maps for designated multi-family residences are
