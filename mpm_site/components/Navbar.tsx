@@ -47,9 +47,9 @@ const navItems: NavItem[] = [
   {
     label: "Owners",
     children: [
-      { label: "Management Services", href: "/management-services/" },
       { label: "Owner Portal", href: "/owner-portal/" },
       { label: "Owner Resources", href: "/owner-resources/" },
+      { label: "Management Services", href: "/management-services/" },
     ],
   },
   {

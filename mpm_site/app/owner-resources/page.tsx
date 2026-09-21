@@ -114,24 +114,6 @@ export default function OwnerResourcesPage() {
               </a>
             ))}
           </div>
-
-          {/* Need help advice card */}
-          <div className="bg-[#415161] text-white rounded-xl p-8 text-center space-y-3">
-            <h3 className="text-xl font-serif font-bold">
-              Have Questions About Your Management Agreement?
-            </h3>
-            <p className="text-sm text-gray-200 max-w-xl mx-auto">
-              Our property management team is always here to help you review monthly disbursements, repair authorizations, or market rental rates.
-            </p>
-            <div className="pt-2">
-              <a
-                href="tel:5092428140"
-                className="inline-block px-6 py-2.5 bg-white text-[#415161] hover:bg-gray-100 rounded text-xs font-bold uppercase tracking-wider shadow"
-              >
-                Call Office: (509) 242-8140
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

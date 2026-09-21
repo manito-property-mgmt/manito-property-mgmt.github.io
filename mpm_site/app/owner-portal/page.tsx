@@ -1,6 +1,6 @@
 import React from "react";
 import HeroBanner from "@/components/HeroBanner";
-import { ShieldCheck, FileSpreadsheet, Lock, Clock, ExternalLink, UserPlus, Server } from "lucide-react";
+import { ShieldCheck, FileSpreadsheet, Clock, Server } from "lucide-react";
 
 export const metadata = {
   title: "Owner Portal - Statements & Property Accounting",
@@ -61,8 +61,7 @@ export default function OwnerPortalPage() {
               Why Owners Choose the Online Portal
             </h2>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-              It’s fast, easy, and secure, so why wait? Below, you’ll find information
-              on how to get started and the benefits our property owners enjoy.
+              It’s fast, easy, and secure, so why wait? Below, you’ll find the benefits our property owners enjoy.
             </p>
           </div>
 
@@ -87,43 +86,6 @@ export default function OwnerPortalPage() {
                 </div>
               );
             })}
-          </div>
-
-          {/* How It Works Card */}
-          <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm space-y-6">
-            <div className="flex items-center gap-3">
-              <Lock className="w-6 h-6 text-[#415161]" />
-              <h3 className="text-xl font-serif font-bold text-gray-900">
-                How It Works:
-              </h3>
-            </div>
-            <p className="text-sm text-gray-700 leading-relaxed">
-              In order to keep your financials secure, we use a state-of-the-art portal
-              system that requires you to login with an authorized email address and
-              secure password. Each time you wish to view your reports, invoices, or
-              disbursements, simply visit the portal and enter your credentials.
-            </p>
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <a
-                href="https://spokanearearentals.appfolio.com/oportal/users/log_in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#415161] hover:bg-[#313f4d] text-white text-xs font-bold uppercase tracking-wider rounded transition shadow"
-              >
-                <span>Owner Portal Login</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-              <a
-                href="https://spokanearearentals.appfolio.com/oportal/users/sign_up"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 hover:bg-gray-100 text-gray-700 text-xs font-bold uppercase tracking-wider rounded transition"
-              >
-                <UserPlus className="w-4 h-4 text-gray-500" />
-                <span>Sign Up for Access</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
