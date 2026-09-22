@@ -72,9 +72,24 @@ export default function Navbar() {
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          setIsScrolled((prev) => {
+            // Hysteresis prevents rapid jitter/oscillation:
+            // Shrink only once scrolled past 75px; expand back only when near the top (< 20px)
+            if (!prev && scrollY > 75) return true;
+            if (prev && scrollY < 20) return false;
+            return prev;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -125,20 +140,19 @@ export default function Navbar() {
     };
   }, []);
 
-  // Close dropdown and mobile menu on route changes
-  useEffect(() => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-      closeTimeoutRef.current = null;
-    }
-    setOpenDropdown(null);
-    closeMobile();
-  }, [pathname]);
-
   const closeMobile = () => {
     setMobileOpen(false);
     setOpenMobileGroup(null);
   };
+
+  // Close dropdown and mobile menu on route changes
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setOpenDropdown(null);
+    setMobileOpen(false);
+    setOpenMobileGroup(null);
+  }
 
   const isActive = (item: NavItem) => {
     if (item.href) {
