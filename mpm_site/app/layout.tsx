@@ -57,10 +57,10 @@ export const metadata: Metadata = {
       "Discover Spokane area rentals and boutique property management with Manito Property Management. View available homes, apply online, and access owner & tenant portals.",
     images: [
       {
-        url: "/wa_spokane_property-management_2026_inverse.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Manito Property Management - Spokane Area Rentals",
+        alt: "Manito Property Management",
       },
     ],
   },
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Manito Property Management - Spokane Area Rentals & Property Management",
     description:
       "Discover Spokane area rentals and full-service residential property management with Manito Property Management.",
-    images: ["/wa_spokane_property-management_2026_inverse.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -87,7 +87,7 @@ const jsonLd = {
     "Manito Property Mgmt",
     "Manito PM",
   ],
-  image: "https://manitopropertymgmt.com/wa_spokane_property-management_2026_inverse.png",
+  image: "https://manitopropertymgmt.com/og-image.jpg",
   url: "https://manitopropertymgmt.com",
   telephone: "(509) 242-8140",
   email: "mpropertymanager@windermere.com",
