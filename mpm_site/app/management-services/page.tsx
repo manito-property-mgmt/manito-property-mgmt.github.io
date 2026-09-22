@@ -2,7 +2,7 @@ import React from "react";
 import HeroBanner from "@/components/HeroBanner";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Property Management Services in Spokane, WA",
   description:
     "Discover full-service residential property management in Spokane, WA. AppFolio technology, tenant screening, marketing, digital accounting, and 24/7 maintenance.",
 };

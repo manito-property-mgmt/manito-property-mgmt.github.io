@@ -3,7 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import { Download, MapPin } from "lucide-react";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Tenant Evacuation & Fire Safety Plans",
   description:
     "Safety and emergency evacuation diagrams and floor plans for multi-family residential properties managed by Manito Property Management.",
 };

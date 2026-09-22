@@ -4,9 +4,9 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 import { residentialPortfolio } from "@/data/portfolio";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Property Portfolio - Spokane Residential Properties",
   description:
-    "Explore our portfolio of managed single family homes, apartments, multi-family dwellings, condominiums, duplexes, and townhomes in the Spokane area.",
+    "Explore our portfolio of managed single family homes, apartments, duplexes, and townhomes across Spokane, the South Hill, and Spokane County.",
 };
 
 export default function OurPortfolioPage() {

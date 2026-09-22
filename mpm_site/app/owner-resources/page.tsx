@@ -3,9 +3,9 @@ import HeroBanner from "@/components/HeroBanner";
 import { ExternalLink, AlertCircle } from "lucide-react";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Owner Resources - Property Tax & Mortgage Guidance",
   description:
-    "Helpful financial and government resources for property owners, including Spokane County property taxes, IRS guidance, and mortgage options.",
+    "Helpful financial and governmental resources for rental property owners: Spokane County property taxes, IRS guidance, and mortgage options.",
 };
 
 export default function OwnerResourcesPage() {

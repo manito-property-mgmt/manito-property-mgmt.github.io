@@ -4,9 +4,9 @@ import HeroBanner from "@/components/HeroBanner";
 import QAAccordion from "@/components/QAAccordion";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Frequently Asked Questions (FAQ & Q&A)",
   description:
-    "Find answers to frequently asked questions about renting, applications, maintenance, rent payments, and property management services in Spokane.",
+    "Find answers to frequently asked questions about Spokane rentals, applications, maintenance, rent payments, and boutique property management services.",
 };
 
 export default function QAPage() {

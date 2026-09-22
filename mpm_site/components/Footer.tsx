@@ -112,6 +112,14 @@ export default function Footer() {
                   Maintenance Requests
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/sitemap/"
+                  className="hover:text-white transition-colors"
+                >
+                  Site Directory & Sitemap
+                </Link>
+              </li>
               <li className="pt-1.5 border-t border-gray-700/60 flex flex-col gap-1.5">
                 <a
                   href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
@@ -204,8 +212,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright line */}
-        <div className="mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+        <div className="mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
           <p>© COPYRIGHT 2026 MANITO PROPERTY MANAGEMENT. ALL RIGHTS RESERVED.</p>
+          <span className="hidden sm:inline text-gray-600">•</span>
+          <Link href="/sitemap/" className="hover:text-gray-300 transition-colors underline-offset-2 hover:underline">
+            Sitemap
+          </Link>
         </div>
       </div>
     </footer>

@@ -3,9 +3,9 @@ import HeroBanner from "@/components/HeroBanner";
 import { Wrench, AlertTriangle, Phone, ExternalLink, UserCheck } from "lucide-react";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Tenant Maintenance Requests & Emergency Dispatch",
   description:
-    "Submit routine maintenance requests via the tenant portal or view emergency maintenance numbers for Manito Property Management.",
+    "Submit routine maintenance requests via the tenant portal or contact our 24/7 Spokane emergency maintenance dispatch at (509) 242-8142.",
 };
 
 export default function MaintenanceRequestPage() {

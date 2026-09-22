@@ -6,7 +6,9 @@ import PortfolioCarousel from "@/components/PortfolioCarousel";
 
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Spokane Area Rentals & Property Management",
+  description:
+    "Manito Property Management offers Spokane area rentals and full-service residential property management. Browse homes for rent, schedule showings, and apply online.",
 };
 
 export default function HomePage() {

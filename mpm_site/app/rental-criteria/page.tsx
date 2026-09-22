@@ -3,9 +3,9 @@ import HeroBanner from "@/components/HeroBanner";
 import { ExternalLink } from "lucide-react";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Rental Criteria & Application Requirements",
   description:
-    "Review Manito Property Management's tenant screening criteria, credit requirements, Resident Benefits Package (RBP), and submit an online application.",
+    "Review Manito Property Management's tenant screening criteria, income & credit guidelines, Resident Benefits Package (RBP), and submit an online application.",
 };
 
 export default function RentalCriteriaPage() {

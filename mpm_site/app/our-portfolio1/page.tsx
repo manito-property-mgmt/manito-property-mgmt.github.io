@@ -4,7 +4,7 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 import { portfolioCollection2 } from "@/data/portfolio";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Property Showcase - Managed Spokane Homes",
   description:
     "Explore our diverse portfolio of managed residential rental properties across Spokane, Liberty Lake, and the South Hill.",
 };

@@ -4,9 +4,9 @@ import ContactForm from "@/components/ContactForm";
 import { Phone, MapPin, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Contact Us - Spokane Office & Direct Phone Lines",
   description:
-    "Contact Manito Property Management in Spokane, WA. Office phone, emergency maintenance, leasing inquiries, address on Grand Blvd, and contact form.",
+    "Contact Manito Property Management in Spokane, WA. Office phone (509) 242-8140, showings line, 24/7 emergency maintenance, address on Grand Blvd, and message form.",
 };
 
 export default function ContactUsPage() {

@@ -3,9 +3,9 @@ import HeroBanner from "@/components/HeroBanner";
 import { MapPin } from "lucide-react";
 
 export const metadata = {
-  title: "Manito Property Management",
+  title: "Tenant Resources & Spokane Utility Providers",
   description:
-    "Helpful resources for current and incoming tenants, including local utilities (Avista, City of Spokane), USPS change of address, and office guidelines.",
+    "Helpful resources for current and incoming Spokane tenants: Avista electric/gas, City of Spokane water/sewer/garbage, USPS address changes, and office policies.",
 };
 
 export default function TenantResourcesPage() {
