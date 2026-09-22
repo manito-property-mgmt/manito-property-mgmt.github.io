@@ -17,7 +17,6 @@ export default function HomePage() {
       {/* Hero Banner */}
       <HeroBanner
         backgroundImage="/uploads/6/6/2/9/66293977/background-images/427901462.jpg"
-        minHeight="min-h-[320px] sm:min-h-[350px] lg:min-h-[380px]"
         overlayOpacity="bg-slate-900/60"
         title={
           <span className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider">
@@ -54,66 +53,51 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Column 1: Available Now */}
-            <div className="text-center flex flex-col justify-between space-y-4">
-              <div className="space-y-3">
-                <h2 className="text-2xl font-bold text-[#3f3f3f]">
-                  Available Now
-                </h2>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
-                  View our available rental properties and submit an application
-                  quickly and easily.
-                </p>
-              </div>
-              <div className="pt-2">
+            <div className="text-center flex flex-col items-center space-y-4">
+              <div>
                 <Link
                   href="/available-rentals/"
                   className="inline-block px-7 py-2.5 rounded bg-[#415161] hover:bg-[#32404e] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
                 >
-                  Learn More
+                  Available Now
                 </Link>
               </div>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
+                View our available rental properties and submit an application
+                quickly and easily.
+              </p>
             </div>
 
             {/* Column 2: Management Services */}
-            <div className="text-center flex flex-col justify-between space-y-4">
-              <div className="space-y-3">
-                <h2 className="text-2xl font-bold text-[#3f3f3f]">
-                  Management Services
-                </h2>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
-                  We manage your properties efficiently and effectively,
-                  providing exceptional service.
-                </p>
-              </div>
-              <div className="pt-2">
+            <div className="text-center flex flex-col items-center space-y-4">
+              <div>
                 <Link
                   href="/management-services/"
                   className="inline-block px-7 py-2.5 rounded bg-[#415161] hover:bg-[#32404e] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
                 >
-                  Learn More
+                  Management Services
                 </Link>
               </div>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
+                We manage your properties efficiently and effectively,
+                providing exceptional service.
+              </p>
             </div>
 
             {/* Column 3: Real Estate Agents */}
-            <div className="text-center flex flex-col justify-between space-y-4">
-              <div className="space-y-3">
-                <h2 className="text-2xl font-bold text-[#3f3f3f]">
-                  Real Estate Agents
-                </h2>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
-                  Our services provide your clients the opportunity to utilize
-                  their property as a rental until they are ready to sell.
-                </p>
-              </div>
-              <div className="pt-2">
+            <div className="text-center flex flex-col items-center space-y-4">
+              <div>
                 <Link
                   href="/real-estate-agent-services/"
                   className="inline-block px-7 py-2.5 rounded bg-[#415161] hover:bg-[#32404e] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
                 >
-                  Learn More
+                  Real Estate Agents
                 </Link>
               </div>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
+                Our services provide your clients the opportunity to utilize
+                their property as a rental until they are ready to sell.
+              </p>
             </div>
           </div>
         </div>
