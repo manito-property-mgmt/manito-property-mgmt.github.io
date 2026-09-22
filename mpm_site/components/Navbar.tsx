@@ -219,7 +219,7 @@ export default function Navbar() {
                     onMouseEnter={() => handleMouseEnter(item.label)}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2">
+                    <div className="bg-white rounded-lg shadow-xl border-2 border-gray-200 py-2">
                       {item.children.map((child) => {
                         if (child.external) {
                           return (
@@ -405,7 +405,7 @@ export default function Navbar() {
                     onMouseEnter={() => handleMouseEnter("Login")}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2">
+                    <div className="bg-white rounded-lg shadow-xl border-2 border-gray-200 py-2">
                       <a
                         href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
                         target="_blank"
@@ -434,7 +434,7 @@ export default function Navbar() {
                         </div>
                       </a>
 
-                      <div className="my-1.5 border-t border-gray-100" />
+                      <div className="my-1.5 border-t border-gray-200" />
 
                       <div className="px-4 py-1 flex items-center justify-between text-[11px]">
                         <Link
