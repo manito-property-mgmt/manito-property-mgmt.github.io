@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { residentialPortfolio, PortfolioProperty } from "@/data/portfolio";
 
 export default function PortfolioCarousel() {
@@ -78,30 +78,29 @@ export default function PortfolioCarousel() {
     <section className="py-12 sm:py-16 bg-slate-50 border-b border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header row */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 gap-4">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
               Featured Properties
             </h2>
-            <p className="text-xs sm:text-sm text-gray-500 mt-1">
-              Not all featured properties are available at this time, please see{" "}
+            <p className="mt-1">
               <Link
-                href="/available-rentals/"
-                className="font-semibold text-[#415161] hover:underline"
+                href="/featured-properties/"
+                className="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-gray-700 hover:underline transition-colors"
               >
-                Available Properties
+                <span>View All Featured Properties</span>
+                <ExternalLink className="w-3 h-3 text-gray-400" />
               </Link>
-              .
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <Link
-              href="/featured-properties/"
+              href="/available-rentals/"
               className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#415161] hover:text-[#32404e] transition-colors mr-2"
             >
-              <span>View All Featured Properties</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>See currently available properties</span>
+              <ExternalLink className="w-3.5 h-3.5" />
             </Link>
 
             <button
