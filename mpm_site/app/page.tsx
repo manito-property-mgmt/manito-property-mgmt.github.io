@@ -54,10 +54,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Column 1: Available Now */}
             <div className="text-center flex flex-col items-center space-y-4">
-              <div>
+              <div className="w-full flex justify-center">
                 <Link
                   href="/available-rentals/"
-                  className="inline-block px-7 py-2.5 rounded bg-[#415161] hover:bg-[#32404e] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center w-full max-w-[300px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e]"
                 >
                   Available Now
                 </Link>
@@ -70,10 +70,10 @@ export default function HomePage() {
 
             {/* Column 2: Management Services */}
             <div className="text-center flex flex-col items-center space-y-4">
-              <div>
+              <div className="w-full flex justify-center">
                 <Link
                   href="/management-services/"
-                  className="inline-block px-7 py-2.5 rounded bg-[#415161] hover:bg-[#32404e] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center w-full max-w-[300px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e]"
                 >
                   Management Services
                 </Link>
@@ -86,10 +86,10 @@ export default function HomePage() {
 
             {/* Column 3: Real Estate Agents */}
             <div className="text-center flex flex-col items-center space-y-4">
-              <div>
+              <div className="w-full flex justify-center">
                 <Link
                   href="/real-estate-agent-services/"
-                  className="inline-block px-7 py-2.5 rounded bg-[#415161] hover:bg-[#32404e] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center w-full max-w-[300px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e]"
                 >
                   Real Estate Agents
                 </Link>
