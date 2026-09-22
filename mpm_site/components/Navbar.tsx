@@ -31,7 +31,7 @@ const leftNavItems: NavItem[] = [
     label: "Properties",
     children: [
       { label: "Available Rentals", href: "/available-rentals/" },
-      { label: "Our Portfolio", href: "/our-portfolio/" },
+      { label: "Featured Properties", href: "/featured-properties/" },
     ],
   },
   {

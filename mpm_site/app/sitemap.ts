@@ -68,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65,
     },
     {
-      url: `${baseUrl}/our-portfolio/`,
+      url: `${baseUrl}/featured-properties/`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,

@@ -83,14 +83,24 @@ export default function PortfolioCarousel() {
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
               Featured Properties
             </h2>
+            <p className="text-xs sm:text-sm text-gray-500 mt-1">
+              Not all featured properties are available at this time, please see{" "}
+              <Link
+                href="/available-rentals/"
+                className="font-semibold text-[#415161] hover:underline"
+              >
+                Available Properties
+              </Link>
+              .
+            </p>
           </div>
 
           <div className="flex items-center gap-3">
             <Link
-              href="/our-portfolio/"
+              href="/featured-properties/"
               className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#415161] hover:text-[#32404e] transition-colors mr-2"
             >
-              <span>View All Properties</span>
+              <span>View All Featured Properties</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
@@ -133,7 +143,7 @@ export default function PortfolioCarousel() {
                 style={{ width: `${100 / visibleCount}%` }}
               >
                 <Link
-                  href="/our-portfolio/"
+                  href="/featured-properties/"
                   className="group block bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200"
                 >
                   <div className="relative h-56 sm:h-64 lg:h-72 w-full overflow-hidden bg-gray-100">

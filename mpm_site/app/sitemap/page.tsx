@@ -35,9 +35,9 @@ export default function SitemapPage() {
           description: "Tenant screening criteria, Resident Benefits Package, and application info.",
         },
         {
-          title: "Our Portfolio",
-          href: "/our-portfolio/",
-          description: "Overview of single family homes, duplexes, and multi-family dwellings.",
+          title: "Featured Properties",
+          href: "/featured-properties/",
+          description: "Overview of managed single family homes, duplexes, and multi-family dwellings.",
         },
         {
           title: "Property Showcase",
