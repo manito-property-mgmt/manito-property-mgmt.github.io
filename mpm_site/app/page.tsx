@@ -34,13 +34,13 @@ export default function HomePage() {
         }
         buttons={[
           {
-            label: "Tenant Resources",
-            href: "/tenant-resources/",
+            label: "Tenant Portal",
+            href: "/tenant-portal/",
             variant: "primary",
           },
           {
-            label: "Owner Resources",
-            href: "/owner-resources/",
+            label: "Owner Portal",
+            href: "/owner-portal/",
             variant: "primary",
           },
         ]}

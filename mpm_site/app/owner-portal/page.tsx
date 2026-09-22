@@ -41,7 +41,7 @@ export default function OwnerPortalPage() {
         buttons={[
           {
             label: "Get Started",
-            href: "https://spokanearearentals.appfolio.com/connect/users/request_access",
+            href: "https://spokanearearentals.appfolio.com/oportal/users/sign_up",
             isExternal: true,
             variant: "primary",
           },
