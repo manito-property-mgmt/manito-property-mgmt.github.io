@@ -38,8 +38,8 @@ const leftNavItems: NavItem[] = [
     label: "Tenants",
     children: [
       { label: "Tenant Portal", href: "/tenant-portal/" },
-      { label: "Maintenance Request", href: "/maintenance-request/" },
       { label: "Tenant Resources", href: "/tenant-resources/" },
+      { label: "Maintenance Request", href: "/maintenance-request/" },
       { label: "Evacuation Plans", href: "/evacuation-plans/" },
     ],
   },

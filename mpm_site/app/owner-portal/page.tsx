@@ -3,7 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import { ShieldCheck, FileSpreadsheet, Clock, Server } from "lucide-react";
 
 export const metadata = {
-  title: "Owner Portal - Statements & Property Accounting",
+  title: "Manito Property Management",
   description:
     "Access your owner account online 24/7. Review monthly statements, property performance metrics, and financial documents with Manito Property Management.",
 };

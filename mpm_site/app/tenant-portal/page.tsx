@@ -3,7 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import { CheckCircle2, Clock, Lock } from "lucide-react";
 
 export const metadata = {
-  title: "Tenant Portal - Online Rent Payments & Requests",
+  title: "Manito Property Management",
   description:
     "Pay rent online 24/7, submit maintenance requests, and manage your tenancy securely through the Manito Property Management Tenant Portal.",
 };

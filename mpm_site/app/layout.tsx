@@ -18,10 +18,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | MANITO PROPERTY MANAGEMENT",
-    default: "MANITO PROPERTY MANAGEMENT - Spokane Property Management & Rentals",
-  },
+  title: "Manito Property Management",
   description:
     "Manito Property Management in Spokane Washington is a professional, full-service property management company that has been managing properties in the Spokane area for over a decade.",
   keywords: [

@@ -4,7 +4,7 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 import { residentialPortfolio } from "@/data/portfolio";
 
 export const metadata = {
-  title: "Our Portfolio - Types of Properties We Manage",
+  title: "Manito Property Management",
   description:
     "Explore our portfolio of managed single family homes, apartments, multi-family dwellings, condominiums, duplexes, and townhomes in the Spokane area.",
 };

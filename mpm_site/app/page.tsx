@@ -5,6 +5,10 @@ import HeroBanner from "@/components/HeroBanner";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
 
 
+export const metadata = {
+  title: "Manito Property Management",
+};
+
 export default function HomePage() {
   return (
     <div>

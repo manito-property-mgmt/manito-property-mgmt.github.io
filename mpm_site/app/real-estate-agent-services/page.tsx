@@ -3,7 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import { CheckCircle2, Quote } from "lucide-react";
 
 export const metadata = {
-  title: "Real Estate Agent Services - Broker Partnerships",
+  title: "Manito Property Management",
   description:
     "Partner with Manito Property Management. We protect your client relationships by managing their properties until they are ready to sell—guaranteeing you get them back.",
 };

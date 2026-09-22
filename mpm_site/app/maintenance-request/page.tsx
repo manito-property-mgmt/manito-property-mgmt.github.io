@@ -3,7 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import { Wrench, AlertTriangle, Phone, ExternalLink, UserCheck } from "lucide-react";
 
 export const metadata = {
-  title: "Tenant Maintenance Request",
+  title: "Manito Property Management",
   description:
     "Submit routine maintenance requests via the tenant portal or view emergency maintenance numbers for Manito Property Management.",
 };
