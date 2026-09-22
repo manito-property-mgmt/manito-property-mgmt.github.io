@@ -182,8 +182,15 @@ def scrape():
         print("Warning: 0 listings were scraped from AppFolio. Keeping existing file to prevent clearing valid data.")
         return
 
+    try:
+        from zoneinfo import ZoneInfo
+        now = datetime.now(ZoneInfo("America/Los_Angeles"))
+    except Exception:
+        now = datetime.now()
+
     payload = {
-        "scraped_at": datetime.now().isoformat(),
+        "scraped_at": now.isoformat(),
+        "last_updated": now.strftime("%b %-d, %Y, %-I:%M %p") + " PST",
         "total": len(listings),
         "listings": listings
     }

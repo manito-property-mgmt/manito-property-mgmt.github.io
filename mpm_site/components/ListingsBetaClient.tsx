@@ -25,6 +25,8 @@ import {
   Sparkles,
   Check,
   Camera,
+  Square,
+  CheckSquare,
 } from "lucide-react";
 import type { MapListing } from "@/components/ListingsMap";
 
@@ -57,6 +59,30 @@ const PRICE_STEP = 50;
 
 export default function ListingsBetaClient() {
   const allListings = (listingsData.listings || []) as PropertyListing[];
+
+  // Formatted last updated timestamp
+  const lastUpdated = useMemo(() => {
+    const data = listingsData as unknown as { last_updated?: string; scraped_at?: string };
+    if (data.last_updated) return data.last_updated;
+    if (data.scraped_at) {
+      try {
+        const d = new Date(data.scraped_at);
+        if (!isNaN(d.getTime())) {
+          return d.toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          }) + ", " + d.toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "2-digit",
+          }) + " PST";
+        }
+      } catch {
+        // fallback
+      }
+    }
+    return "";
+  }, []);
 
   // Filter States
   const [searchTerm, setSearchTerm] = useState("");
@@ -641,45 +667,66 @@ export default function ListingsBetaClient() {
 
           {/* Bottom Filter Tags & Counts */}
           <div className="flex flex-wrap items-center justify-between gap-3 pt-2 text-xs border-t border-slate-100">
-            <div className="flex items-center gap-3">
+            {/* Left side: Found Count & Last Updated */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               <span className="font-bold text-gray-800">
                 {filteredListings.length} {filteredListings.length === 1 ? "Property" : "Properties"} Found
               </span>
 
-              {/* Pet filter pills */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setCatsOnly(!catsOnly)}
-                  className={`px-2.5 py-1 rounded-full text-xs transition-colors ${
-                    catsOnly
-                      ? "bg-black text-white border border-black font-medium"
-                      : "bg-white text-black border border-slate-300 hover:bg-slate-100 font-normal"
-                  }`}
-                >
-                  Cats OK
-                </button>
-                <button
-                  onClick={() => setDogsOnly(!dogsOnly)}
-                  className={`px-2.5 py-1 rounded-full text-xs transition-colors ${
-                    dogsOnly
-                      ? "bg-black text-white border border-black font-medium"
-                      : "bg-white text-black border border-slate-300 hover:bg-slate-100 font-normal"
-                  }`}
-                >
-                  Dogs OK
-                </button>
-              </div>
+              {lastUpdated && (
+                <span className="text-gray-500 text-[11px] sm:text-xs font-normal inline-flex items-center gap-1.5">
+                  <span className="text-gray-300 hidden sm:inline">•</span>
+                  <span>Last updated on: {lastUpdated}</span>
+                </span>
+              )}
             </div>
 
-            {hasActiveFilters && (
+            {/* Right side: Pet filter checkboxes & Reset Filters */}
+            <div className="flex items-center gap-2 sm:gap-2.5 ml-auto">
               <button
-                onClick={resetFilters}
-                className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-semibold cursor-pointer"
+                type="button"
+                onClick={() => setCatsOnly(!catsOnly)}
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer border ${
+                  catsOnly
+                    ? "bg-slate-100 text-gray-900 border-[#415161]"
+                    : "bg-white text-gray-700 border-slate-300 hover:bg-slate-50 hover:border-slate-400"
+                }`}
               >
-                <RotateCcw className="w-3 h-3" />
-                <span>Reset Filters</span>
+                {catsOnly ? (
+                  <CheckSquare className="w-3.5 h-3.5 text-[#415161]" />
+                ) : (
+                  <Square className="w-3.5 h-3.5 text-gray-400" />
+                )}
+                <span>Cats OK</span>
               </button>
-            )}
+
+              <button
+                type="button"
+                onClick={() => setDogsOnly(!dogsOnly)}
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer border ${
+                  dogsOnly
+                    ? "bg-slate-100 text-gray-900 border-[#415161]"
+                    : "bg-white text-gray-700 border-slate-300 hover:bg-slate-50 hover:border-slate-400"
+                }`}
+              >
+                {dogsOnly ? (
+                  <CheckSquare className="w-3.5 h-3.5 text-[#415161]" />
+                ) : (
+                  <Square className="w-3.5 h-3.5 text-gray-400" />
+                )}
+                <span>Dogs OK</span>
+              </button>
+
+              {hasActiveFilters && (
+                <button
+                  onClick={resetFilters}
+                  className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-semibold cursor-pointer ml-1"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  <span>Reset Filters</span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
