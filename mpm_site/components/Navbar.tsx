@@ -9,7 +9,6 @@ import {
   X,
   ChevronDown,
   User,
-  ShieldCheck,
   FileText,
   ExternalLink,
 } from "lucide-react";
@@ -464,37 +463,26 @@ export default function Navbar() {
       {/* Mobile Drawer Menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 px-4 pt-3 pb-6 max-h-[85vh] overflow-y-auto shadow-2xl animate-in slide-in-from-top-2 duration-200">
-          {/* Prominent Mobile Portals & Application Header */}
-          <div className="space-y-2 mb-4 pb-4 border-b border-gray-200">
+          {/* Mobile Portals Header */}
+          <div className="mb-4 pb-3 border-b border-gray-200">
             <div className="grid grid-cols-2 gap-2 text-center">
               <a
                 href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#1f2937] hover:bg-slate-800 text-white py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm transition"
+                className="bg-[#1f2937] hover:bg-slate-800 text-white py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center shadow-sm transition"
               >
-                <User className="w-3.5 h-3.5 text-blue-400" />
                 <span>Tenant Login</span>
               </a>
               <a
                 href="https://spokanearearentals.appfolio.com/oportal/users/log_in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#1f2937] hover:bg-slate-800 text-white py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm transition"
+                className="bg-[#1f2937] hover:bg-slate-800 text-white py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center shadow-sm transition"
               >
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
                 <span>Owner Login</span>
               </a>
             </div>
-            <a
-              href="https://manitopm.quickleasepro.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-[#415161] hover:bg-[#313f4d] text-white py-2.5 px-4 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Apply Online Now</span>
-            </a>
           </div>
 
           <div className="space-y-1">
@@ -574,30 +562,6 @@ export default function Navbar() {
                 </div>
               );
             })}
-          </div>
-
-          {/* Mobile Direct Contact Details */}
-          <div className="mt-5 pt-4 border-t border-gray-200 text-xs space-y-2 text-gray-600">
-            <p className="font-semibold text-gray-800">Manito Property Management</p>
-            <p>2829 S Grand Blvd. Ste 101, Spokane, WA 99203</p>
-            <p>
-              Office:{" "}
-              <a href="tel:5092428140" className="text-[#415161] font-bold">
-                (509) 242-8140
-              </a>
-            </p>
-            <p>
-              Showings:{" "}
-              <a href="tel:5092428144" className="text-[#415161] font-bold">
-                (509) 242-8144
-              </a>
-            </p>
-            <p>
-              Maintenance Emergency:{" "}
-              <a href="tel:5092428142" className="text-red-600 font-bold">
-                (509) 242-8142
-              </a>
-            </p>
           </div>
         </div>
       )}
