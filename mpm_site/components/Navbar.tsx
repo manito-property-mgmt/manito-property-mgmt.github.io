@@ -405,9 +405,6 @@ export default function Navbar() {
                     onMouseLeave={handleMouseLeave}
                   >
                     <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2">
-                      <div className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-gray-400">
-                        Client Portals
-                      </div>
                       <a
                         href="https://spokanearearentals.appfolio.com/connect/users/sign_in"
                         target="_blank"

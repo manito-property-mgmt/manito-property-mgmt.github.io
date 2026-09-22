@@ -131,7 +131,7 @@ export default function ContactUsPage() {
                     (509) 242-8144
                   </a>
                 </p>
-                <p className="text-[11px] text-gray-500">
+                <p>
                   Emergency:{" "}
                   <a
                     href="tel:5092428142"
