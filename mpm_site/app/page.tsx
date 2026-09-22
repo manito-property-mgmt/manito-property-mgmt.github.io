@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HeroBanner from "@/components/HeroBanner";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import { ExternalLink } from "lucide-react";
 
 
 export const metadata = {
@@ -57,9 +58,10 @@ export default function HomePage() {
               <div className="w-full flex justify-center">
                 <Link
                   href="/available-rentals/"
-                  className="inline-flex items-center justify-center w-full max-w-[300px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e]"
+                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e] group"
                 >
-                  Available Now
+                  <span>Available Now</span>
+                  <ExternalLink className="w-4 h-4 shrink-0 text-white/90 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
@@ -73,9 +75,10 @@ export default function HomePage() {
               <div className="w-full flex justify-center">
                 <Link
                   href="/management-services/"
-                  className="inline-flex items-center justify-center w-full max-w-[300px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e]"
+                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e] group"
                 >
-                  Management Services
+                  <span>Management Services</span>
+                  <ExternalLink className="w-4 h-4 shrink-0 text-white/90 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
@@ -89,9 +92,10 @@ export default function HomePage() {
               <div className="w-full flex justify-center">
                 <Link
                   href="/real-estate-agent-services/"
-                  className="inline-flex items-center justify-center w-full max-w-[300px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e]"
+                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e] group"
                 >
-                  Real Estate Agents
+                  <span>Real Estate Agents</span>
+                  <ExternalLink className="w-4 h-4 shrink-0 text-white/90 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
