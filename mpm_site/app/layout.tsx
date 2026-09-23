@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat, Lato } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import "leaflet/dist/leaflet.css";
 import "./globals.css";
 
 const montserrat = Montserrat({
