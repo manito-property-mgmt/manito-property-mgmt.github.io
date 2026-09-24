@@ -190,22 +190,14 @@ export default function Footer() {
 
             {/* Equal Housing Logo */}
             <div className="pt-2">
-              <div className="flex items-center gap-3 bg-gray-800/80 p-3 rounded border border-gray-700">
-                <div className="relative w-12 h-12 flex-shrink-0">
-                  <Image
-                    src="/uploads/6/6/2/9/66293977/published/3f2afb2fa017ece61be17e071104f5d4_3.png"
-                    alt="Equal Housing Opportunity"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="text-xs text-gray-400 leading-tight">
-                  <span className="font-semibold text-gray-200">
-                    Equal Housing Opportunity
-                  </span>
-                  <br />
-                  Committed to fair housing laws for all applicants.
-                </div>
+              <div className="inline-flex items-center justify-center bg-white px-3 py-2 rounded-md shadow-sm border border-gray-200">
+                <Image
+                  src="/uploads/6/6/2/9/66293977/published/3f2afb2fa017ece61be17e071104f5d4_3.png"
+                  alt="Equal Housing Opportunity"
+                  width={97}
+                  height={36}
+                  className="w-[97px] h-auto object-contain"
+                />
               </div>
             </div>
           </div>
