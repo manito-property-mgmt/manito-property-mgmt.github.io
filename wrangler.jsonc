@@ -18,5 +18,6 @@
       "previews_enabled": true,
       "enabled": false
     }
-  ]
+  ],
+  "previews": {}
 }
