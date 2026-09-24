@@ -20,6 +20,10 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://manitopropertymgmt.com"),
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: "./",
   },
@@ -145,6 +149,23 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-slate-800">
+        {/* STAGING / PREVIEW BANNER - ONLY ON DEV BRANCH */}
+        <div
+          role="region"
+          aria-label="Staging Environment Notification"
+          className="bg-amber-500 text-slate-950 px-4 py-2 text-xs sm:text-sm font-medium border-b border-amber-600/50 shadow-sm relative z-50 text-center flex flex-wrap items-center justify-center gap-2"
+        >
+          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950 text-amber-300 text-[10px] sm:text-[11px] font-bold tracking-wider uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            Dev Environment
+          </span>
+          <span className="font-semibold text-slate-900">
+            You are viewing <strong>dev.manitopropertymgmt.com</strong> (Staging / Testing Build)
+          </span>
+          <span className="hidden sm:inline text-slate-800 text-xs">
+            — Changes here do not affect the live production site.
+          </span>
+        </div>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
