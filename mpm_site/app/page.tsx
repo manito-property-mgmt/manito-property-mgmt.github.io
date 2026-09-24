@@ -14,10 +14,13 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div>
-      {/* Hero Banner */}
+      {/* Tall Hero Backdrop with integrated 3D Featured Showcase */}
       <HeroBanner
         backgroundImage="/uploads/6/6/2/9/66293977/background-images/427901462.jpg"
-        overlayOpacity="bg-slate-900/60"
+        overlayOpacity="bg-gradient-to-b from-slate-950/80 via-slate-900/65 to-slate-950/85"
+        minHeight="min-h-[720px] sm:min-h-[780px] lg:min-h-[840px] xl:min-h-[880px]"
+        backgroundPosition="bg-center"
+        maxWidth="max-w-[1440px]"
         title={
           <span className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider">
             manito property management
@@ -43,10 +46,9 @@ export default function HomePage() {
             variant: "primary",
           },
         ]}
-      />
-
-      {/* Moving Portfolio Slideshow/Carousel */}
-      <PortfolioCarousel />
+      >
+        <PortfolioCarousel />
+      </HeroBanner>
 
       {/* Main 3 Feature Columns */}
       <section className="py-16 sm:py-20 bg-white">

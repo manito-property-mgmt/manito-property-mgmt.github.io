@@ -16,6 +16,10 @@ interface HeroBannerProps {
   minHeight?: string;
   align?: "center" | "left";
   overlayOpacity?: string;
+  maxWidth?: string;
+  children?: React.ReactNode;
+  className?: string;
+  backgroundPosition?: string;
 }
 
 export default function HeroBanner({
@@ -26,16 +30,20 @@ export default function HeroBanner({
   minHeight = "min-h-[220px] sm:min-h-[250px] lg:min-h-[280px]",
   align = "center",
   overlayOpacity = "bg-slate-900/65",
+  maxWidth = "max-w-5xl",
+  children,
+  className = "",
+  backgroundPosition = "bg-center",
 }: HeroBannerProps) {
   return (
     <div
-      className={`relative w-full ${minHeight} flex items-center justify-center bg-cover bg-center bg-no-repeat`}
+      className={`relative w-full ${minHeight} flex flex-col items-center justify-center bg-cover ${backgroundPosition} bg-no-repeat overflow-hidden ${className}`}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Dark tint overlay for text contrast */}
       <div className={`absolute inset-0 ${overlayOpacity} backdrop-brightness-95`} />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 text-center">
+      <div className={`relative z-10 ${maxWidth} mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 text-center w-full`}>
         <div
           className={`space-y-3 sm:space-y-4 ${
             align === "left" ? "text-left" : "text-center"
@@ -92,6 +100,8 @@ export default function HeroBanner({
             </div>
           )}
         </div>
+
+        {children && <div className="mt-8 sm:mt-10 w-full">{children}</div>}
       </div>
     </div>
   );
