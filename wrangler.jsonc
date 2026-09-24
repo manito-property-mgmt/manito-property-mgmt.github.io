@@ -10,13 +10,8 @@
   "routes": [
     {
       "pattern": "manitopropertymgmt.com",
-      "custom_domain": true
-    },
-    {
-      "pattern": "dev.manitopropertymgmt.com",
       "custom_domain": true,
-      "previews_enabled": true,
-      "enabled": false
+      "previews_enabled": true
     }
   ],
   "previews": {}
