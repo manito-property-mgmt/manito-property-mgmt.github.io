@@ -70,11 +70,6 @@ export default function SitemapPage() {
           href: "/maintenance-request/",
           description: "Submit written routine maintenance requests or contact 24/7 emergency dispatch.",
         },
-        {
-          title: "Evacuation Plans",
-          href: "/evacuation-plans/",
-          description: "Emergency fire evacuation routes and safety diagrams for multi-family dwellings.",
-        },
       ],
     },
     {

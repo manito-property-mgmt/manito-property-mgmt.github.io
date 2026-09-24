@@ -41,7 +41,6 @@ const leftNavItems: NavItem[] = [
       { label: "Tenant Portal", href: "/tenant-portal/" },
       { label: "Tenant Resources", href: "/tenant-resources/" },
       { label: "Maintenance Request", href: "/maintenance-request/" },
-      { label: "Evacuation Plans", href: "/evacuation-plans/" },
     ],
   },
   {
