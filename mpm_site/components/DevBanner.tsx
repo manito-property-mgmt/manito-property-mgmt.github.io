@@ -1,25 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
 
 export default function DevBanner() {
-  const [isDev, setIsDev] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
+  const isDev = useSyncExternalStore(
+    emptySubscribe,
+    () => {
       const host = window.location.hostname;
-      // Show on dev subdomain, localhost, or preview domains
-      if (
+      return (
         host.startsWith("dev.") ||
         host === "localhost" ||
         host.includes("127.0.0.1") ||
         host.includes("workers.dev") ||
         host.includes("pages.dev")
-      ) {
-        setIsDev(true);
-      }
-    }
-  }, []);
+      );
+    },
+    () => false
+  );
 
   if (!isDev) return null;
 

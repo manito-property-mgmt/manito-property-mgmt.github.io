@@ -1,12 +1,25 @@
-import React from "react";
-import ListingsBetaClient from "@/components/ListingsBetaClient";
+"use client";
 
-export const metadata = {
-  title: "Listings (Beta) - Spokane Area Rentals & Vacancies",
-  description:
-    "Explore current vacancies and rental properties across Spokane, Spokane Valley, Cheney, and Liberty Lake with interactive map search, filters, and high-res photo galleries.",
-};
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ListingsBetaPage() {
-  return <ListingsBetaClient />;
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/available-rentals/");
+  }, [router]);
+
+  return (
+    <div className="min-h-[60vh] flex flex-col items-center justify-center bg-slate-50 text-center px-4">
+      <h1 className="text-xl font-bold text-slate-800 mb-2">Redirecting to Available Rentals...</h1>
+      <p className="text-sm text-gray-600">
+        If you are not redirected automatically,{" "}
+        <a href="/available-rentals/" className="text-[#415161] hover:underline font-semibold">
+          click here to view Available Rentals
+        </a>
+        .
+      </p>
+    </div>
+  );
 }
