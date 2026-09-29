@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import HeroBanner from "@/components/HeroBanner";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import FeaturedPropertyShowcase from "@/components/FeaturedPropertyShowcase";
+import ReviewsSlider from "@/components/ReviewsSlider";
 import { ExternalLink } from "lucide-react";
 
 
@@ -107,6 +109,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Featured Luxury Property Showcase (Dynamically displays highest-priced vacancy) */}
+      <FeaturedPropertyShowcase />
+
+      {/* Google Reviews & Attestations Slider */}
+      <ReviewsSlider />
     </div>
   );
 }
