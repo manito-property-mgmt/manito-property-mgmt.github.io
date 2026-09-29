@@ -14,7 +14,7 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1f2937] text-gray-300 border-t border-gray-800">
+    <footer className="bg-[#242528] text-gray-300 border-t border-[#363638]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
@@ -39,14 +39,14 @@ export default function Footer() {
                 href="https://www.facebook.com/search/top?q=manito%20property%20management"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center transition-transform hover:scale-105"
+                className="w-9 h-9 rounded-full bg-[#597db9] hover:bg-[#486b9f] text-white flex items-center justify-center transition-transform hover:scale-105"
                 aria-label="Visit Manito Property Management on Facebook"
               >
                 <FacebookIcon className="w-5 h-5" />
               </a>
               <a
                 href="mailto:mpropertymanager@windermere.com"
-                className="w-9 h-9 rounded-full bg-gray-700 hover:bg-gray-600 text-white flex items-center justify-center transition-transform hover:scale-105"
+                className="w-9 h-9 rounded-full bg-[#363638] hover:bg-[#48484a] text-white flex items-center justify-center transition-transform hover:scale-105"
                 aria-label="Email Manito Property Management"
               >
                 <Mail className="w-5 h-5" />

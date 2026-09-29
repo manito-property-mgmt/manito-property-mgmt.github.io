@@ -175,12 +175,12 @@ export default function ReviewsSlider() {
                   style={{ width: `${100 / cardsPerView}%` }}
                 >
                   <div className="h-full bg-white border border-slate-200/90 rounded-xl p-4 sm:p-5 shadow-xs hover:shadow-md hover:border-slate-300 transition-all flex flex-col space-y-2">
-                    {/* Top: Stars */}
+                    {/* Top: Stars (Rich Gold) */}
                     <div className="flex items-center gap-1">
                       {[...Array(review.rating)].map((_, i) => (
                         <Star
                           key={i}
-                          className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
+                          className="w-3.5 h-3.5 fill-[#c5a059] text-[#c5a059]"
                         />
                       ))}
                     </div>
@@ -211,7 +211,7 @@ export default function ReviewsSlider() {
                   onClick={() => setCurrentIndex(idx)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     currentIndex === idx
-                      ? "w-8 bg-[#415161]"
+                      ? "w-8 bg-[#597db9]"
                       : "w-2 bg-slate-200 hover:bg-slate-300"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
@@ -224,7 +224,7 @@ export default function ReviewsSlider() {
               <button
                 type="button"
                 onClick={prevSlide}
-                className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center shadow-xs hover:shadow transition-all hover:scale-105 active:scale-95"
+                className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-[#597db9] hover:border-[#597db9]/50 flex items-center justify-center shadow-xs hover:shadow transition-all hover:scale-105 active:scale-95"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -232,7 +232,7 @@ export default function ReviewsSlider() {
               <button
                 type="button"
                 onClick={nextSlide}
-                className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center shadow-xs hover:shadow transition-all hover:scale-105 active:scale-95"
+                className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-[#597db9] hover:border-[#597db9]/50 flex items-center justify-center shadow-xs hover:shadow transition-all hover:scale-105 active:scale-95"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-5 h-5" />

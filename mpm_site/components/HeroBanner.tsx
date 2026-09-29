@@ -68,9 +68,9 @@ export default function HeroBanner({
                 const baseClass =
                   "inline-flex items-center justify-center px-6 py-2.5 rounded font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md border-2 border-white";
                 const variantClass = isPrimary
-                  ? "bg-[#415161] hover:bg-[#32404e] text-white"
+                  ? "bg-[#597db9] hover:bg-[#486b9f] text-white"
                   : btn.variant === "secondary"
-                  ? "bg-white hover:bg-gray-100 text-[#415161]"
+                  ? "bg-white hover:bg-gray-100 text-[#363638]"
                   : "bg-transparent hover:bg-white/20 text-white";
 
                 if (btn.isExternal) {

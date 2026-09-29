@@ -32,7 +32,7 @@ const ListingsMap = dynamic(() => import("@/components/ListingsMap"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full min-h-[480px] bg-slate-100 flex flex-col items-center justify-center text-gray-500 rounded-xl border border-slate-200">
-      <div className="w-8 h-8 border-3 border-[#415161] border-t-transparent rounded-full animate-spin mb-2" />
+      <div className="w-8 h-8 border-3 border-[#597db9] border-t-transparent rounded-full animate-spin mb-2" />
       <span className="text-xs font-semibold uppercase tracking-wider">Loading Interactive Map...</span>
     </div>
   ),
@@ -373,7 +373,7 @@ export default function AvailableRentalsClient() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search by address, street, neighborhood, or keyword..."
-                className="w-full pl-10 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#415161] focus:bg-white transition-all text-slate-800"
+                className="w-full pl-10 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#597db9] focus:bg-white transition-all text-slate-800"
               />
               {searchTerm && (
                 <button
@@ -392,7 +392,7 @@ export default function AvailableRentalsClient() {
                   onClick={() => setViewMode("split")}
                   className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-all ${
                     viewMode === "split"
-                      ? "bg-white text-[#415161] shadow-xs font-bold"
+                      ? "bg-white text-[#597db9] shadow-xs font-bold"
                       : "text-gray-600 hover:text-gray-900"
                   }`}
                   title="Split View (Map + Cards)"
@@ -405,7 +405,7 @@ export default function AvailableRentalsClient() {
                   onClick={() => setViewMode("grid")}
                   className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-all ${
                     viewMode === "grid"
-                      ? "bg-white text-[#415161] shadow-xs font-bold"
+                      ? "bg-white text-[#597db9] shadow-xs font-bold"
                       : "text-gray-600 hover:text-gray-900"
                   }`}
                   title="Grid View (Cards Only)"
@@ -488,7 +488,7 @@ export default function AvailableRentalsClient() {
                   Price Range
                 </label>
                 {(minRent > PRICE_MIN_LIMIT || maxRent < PRICE_MAX_LIMIT) && (
-                  <span className="text-xs font-semibold text-[#415161]">
+                  <span className="text-xs font-semibold text-[#ef8329]">
                     ${minRent.toLocaleString()} – ${maxRent.toLocaleString()}
                   </span>
                 )}
@@ -501,7 +501,7 @@ export default function AvailableRentalsClient() {
 
                 {/* Active Colored Range Bar */}
                 <div
-                  className="absolute h-1.5 bg-[#415161] rounded-full pointer-events-none"
+                  className="absolute h-1.5 bg-[#597db9] rounded-full pointer-events-none"
                   style={{
                     left: `${Math.max(0, Math.min(100, ((minRent - PRICE_MIN_LIMIT) / (PRICE_MAX_LIMIT - PRICE_MIN_LIMIT)) * 100))}%`,
                     right: `${Math.max(0, Math.min(100, 100 - ((maxRent - PRICE_MIN_LIMIT) / (PRICE_MAX_LIMIT - PRICE_MIN_LIMIT)) * 100))}%`,
@@ -525,7 +525,7 @@ export default function AvailableRentalsClient() {
                     [&::-webkit-slider-thumb]:w-4
                     [&::-webkit-slider-thumb]:h-4
                     [&::-webkit-slider-thumb]:rounded-full
-                    [&::-webkit-slider-thumb]:bg-[#415161]
+                    [&::-webkit-slider-thumb]:bg-[#597db9]
                     [&::-webkit-slider-thumb]:border-2
                     [&::-webkit-slider-thumb]:border-white
                     [&::-webkit-slider-thumb]:shadow-md
@@ -538,7 +538,7 @@ export default function AvailableRentalsClient() {
                     [&::-moz-range-thumb]:w-4
                     [&::-moz-range-thumb]:h-4
                     [&::-moz-range-thumb]:rounded-full
-                    [&::-moz-range-thumb]:bg-[#415161]
+                    [&::-moz-range-thumb]:bg-[#597db9]
                     [&::-moz-range-thumb]:border-2
                     [&::-moz-range-thumb]:border-white
                     [&::-moz-range-thumb]:shadow-md
@@ -564,7 +564,7 @@ export default function AvailableRentalsClient() {
                     [&::-webkit-slider-thumb]:w-4
                     [&::-webkit-slider-thumb]:h-4
                     [&::-webkit-slider-thumb]:rounded-full
-                    [&::-webkit-slider-thumb]:bg-[#415161]
+                    [&::-webkit-slider-thumb]:bg-[#597db9]
                     [&::-webkit-slider-thumb]:border-2
                     [&::-webkit-slider-thumb]:border-white
                     [&::-webkit-slider-thumb]:shadow-md
@@ -577,7 +577,7 @@ export default function AvailableRentalsClient() {
                     [&::-moz-range-thumb]:w-4
                     [&::-moz-range-thumb]:h-4
                     [&::-moz-range-thumb]:rounded-full
-                    [&::-moz-range-thumb]:bg-[#415161]
+                    [&::-moz-range-thumb]:bg-[#597db9]
                     [&::-moz-range-thumb]:border-2
                     [&::-moz-range-thumb]:border-white
                     [&::-moz-range-thumb]:shadow-md
@@ -600,7 +600,7 @@ export default function AvailableRentalsClient() {
                     onChange={(e) => handleMinInputChange(e.target.value)}
                     onBlur={handleMinInputBlur}
                     placeholder="Min"
-                    className="w-full pl-6 pr-2 py-1 text-xs bg-slate-50 border border-slate-200 rounded-md text-gray-800 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#415161] transition-all"
+                    className="w-full pl-6 pr-2 py-1 text-xs bg-slate-50 border border-slate-200 rounded-md text-gray-800 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#597db9] transition-all"
                   />
                 </div>
 
@@ -617,7 +617,7 @@ export default function AvailableRentalsClient() {
                     onChange={(e) => handleMaxInputChange(e.target.value)}
                     onBlur={handleMaxInputBlur}
                     placeholder="Max"
-                    className="w-full pl-6 pr-2 py-1 text-xs bg-slate-50 border border-slate-200 rounded-md text-gray-800 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#415161] transition-all"
+                    className="w-full pl-6 pr-2 py-1 text-xs bg-slate-50 border border-slate-200 rounded-md text-gray-800 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#597db9] transition-all"
                   />
                 </div>
               </div>
@@ -683,12 +683,12 @@ export default function AvailableRentalsClient() {
                 onClick={() => setCatsOnly(!catsOnly)}
                 className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer border ${
                   catsOnly
-                    ? "bg-slate-100 text-gray-900 border-[#415161]"
+                    ? "bg-slate-100 text-gray-900 border-[#597db9]"
                     : "bg-white text-gray-700 border-slate-300 hover:bg-slate-50 hover:border-slate-400"
                 }`}
               >
                 {catsOnly ? (
-                  <CheckSquare className="w-3.5 h-3.5 text-[#415161]" />
+                  <CheckSquare className="w-3.5 h-3.5 text-[#597db9]" />
                 ) : (
                   <Square className="w-3.5 h-3.5 text-gray-400" />
                 )}
@@ -700,12 +700,12 @@ export default function AvailableRentalsClient() {
                 onClick={() => setDogsOnly(!dogsOnly)}
                 className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer border ${
                   dogsOnly
-                    ? "bg-slate-100 text-gray-900 border-[#415161]"
+                    ? "bg-slate-100 text-gray-900 border-[#597db9]"
                     : "bg-white text-gray-700 border-slate-300 hover:bg-slate-50 hover:border-slate-400"
                 }`}
               >
                 {dogsOnly ? (
-                  <CheckSquare className="w-3.5 h-3.5 text-[#415161]" />
+                  <CheckSquare className="w-3.5 h-3.5 text-[#597db9]" />
                 ) : (
                   <Square className="w-3.5 h-3.5 text-gray-400" />
                 )}
@@ -767,7 +767,7 @@ export default function AvailableRentalsClient() {
               {effectiveSelectedPropertyId !== null && (
                 <div className="flex items-center justify-between p-3.5 bg-slate-100 rounded-xl border border-slate-200 text-xs shadow-xs">
                   <div className="flex items-center gap-2 text-slate-800">
-                    <MapPin className="w-4 h-4 text-[#415161] flex-shrink-0" />
+                    <MapPin className="w-4 h-4 text-[#ef8329] flex-shrink-0" />
                     <span>
                       Filtered to map selection:{" "}
                       <strong className="font-bold text-slate-900">
@@ -791,7 +791,7 @@ export default function AvailableRentalsClient() {
                   <p className="text-xs text-gray-500">Try broadening your price range, bedroom criteria, or search term.</p>
                   <button
                     onClick={resetFilters}
-                    className="mt-2 px-4 py-2 bg-[#415161] hover:bg-[#313f4d] text-white text-xs font-bold rounded-lg transition-colors"
+                    className="mt-2 px-4 py-2 bg-[#597db9] hover:bg-[#486b9f] text-white text-xs font-bold rounded-lg transition-colors shadow-xs"
                   >
                     Reset All Filters
                   </button>
@@ -810,7 +810,7 @@ export default function AvailableRentalsClient() {
                       id={`listing-card-${property.id}`}
                       className={`group bg-white rounded-xl overflow-hidden border transition-all duration-200 flex flex-col justify-between ${
                         effectiveSelectedPropertyId === property.id
-                          ? "border-[#415161] ring-2 ring-[#415161]/30 shadow-md"
+                          ? "border-[#597db9] ring-2 ring-[#597db9]/30 shadow-md"
                           : "border-slate-200 shadow-xs hover:shadow-md hover:border-slate-300"
                       }`}
                     >
@@ -846,7 +846,7 @@ export default function AvailableRentalsClient() {
 
                         {/* Price Tag Overlay at bottom of image */}
                         <div className="absolute bottom-2.5 left-2.5">
-                          <span className="px-3 py-1 bg-[#415161]/95 text-white font-bold text-sm sm:text-base rounded-md shadow-sm">
+                          <span className="px-3 py-1 bg-[#363638]/95 text-white font-bold text-sm sm:text-base rounded-md shadow-sm">
                             {property.rent} <span className="text-xs font-normal opacity-80">/ mo</span>
                           </span>
                         </div>
@@ -855,7 +855,7 @@ export default function AvailableRentalsClient() {
                       {/* Card Content */}
                       <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
                         <div className="space-y-1.5">
-                          <h3 className="font-bold text-gray-900 text-sm sm:text-base line-clamp-1 group-hover:text-[#415161] transition-colors">
+                          <h3 className="font-bold text-gray-900 text-sm sm:text-base line-clamp-1 group-hover:text-[#597db9] transition-colors">
                             {property.title || property.address}
                           </h3>
 
@@ -911,7 +911,7 @@ export default function AvailableRentalsClient() {
                             href="https://manitopm.quickleasepro.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-1 px-3.5 py-2 bg-[#415161] hover:bg-[#313f4d] text-white text-xs font-bold rounded-lg transition-colors"
+                            className="inline-flex items-center justify-center gap-1 px-3.5 py-2 bg-[#ef8329] hover:bg-[#d9701a] text-white text-xs font-bold rounded-lg transition-colors shadow-xs"
                           >
                             <span>Apply</span>
                             <ExternalLink className="w-3 h-3" />
@@ -939,7 +939,7 @@ export default function AvailableRentalsClient() {
             {/* Modal Header */}
             <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
               <div>
-                <span className="text-xs uppercase font-bold text-[#415161] tracking-wider">
+                <span className="text-xs uppercase font-bold text-[#597db9] tracking-wider">
                   {modalProperty.city} • Available Listing #{modalProperty.id}
                 </span>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mt-0.5">
@@ -1008,7 +1008,7 @@ export default function AvailableRentalsClient() {
                           key={idx}
                           onClick={() => setModalPhotoIndex(idx)}
                           className={`relative w-16 h-12 rounded-md overflow-hidden flex-shrink-0 border-2 transition-all ${
-                            modalPhotoIndex === idx ? "border-[#415161] scale-105" : "border-transparent opacity-70 hover:opacity-100"
+                            modalPhotoIndex === idx ? "border-[#ef8329] scale-105" : "border-transparent opacity-70 hover:opacity-100"
                           }`}
                         >
                           <Image src={img} alt={`Thumb ${idx}`} fill className="object-cover" />
@@ -1064,7 +1064,7 @@ export default function AvailableRentalsClient() {
                     href="https://manitopm.quickleasepro.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 bg-[#415161] hover:bg-[#313f4d] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-sm transition-colors"
+                    className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 bg-[#ef8329] hover:bg-[#d9701a] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-sm transition-colors"
                   >
                     <span>Apply Online</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -1101,7 +1101,7 @@ export default function AvailableRentalsClient() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {modalProperty.amenities.map((amenity, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 p-2 bg-slate-50 rounded-lg border border-slate-100">
-                        <Check className="w-3.5 h-3.5 text-[#415161] flex-shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#597db9] flex-shrink-0" />
                         <span>{amenity}</span>
                       </div>
                     ))}

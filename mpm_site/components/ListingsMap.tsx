@@ -93,7 +93,7 @@ export default function ListingsMap({
         className: "custom-property-pin",
         html: `
           <div style="
-            background: ${isSelected ? "#1e293b" : "#415161"};
+            background: ${isSelected ? "#ef8329" : "#597db9"};
             color: #ffffff;
             font-size: 12px;
             font-weight: 700;
