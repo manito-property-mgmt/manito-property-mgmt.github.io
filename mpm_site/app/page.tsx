@@ -113,7 +113,7 @@ export default function HomePage() {
       {/* Featured Luxury Property Showcase (Dynamically displays highest-priced vacancy) */}
       <FeaturedPropertyShowcase />
 
-      {/* Google Reviews & Attestations Slider */}
+      {/* Client Reviews & Testimonials Slider */}
       <ReviewsSlider />
     </div>
   );

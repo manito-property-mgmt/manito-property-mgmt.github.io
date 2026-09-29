@@ -90,29 +90,6 @@ const reviewsData: Review[] = [
   },
 ];
 
-function GoogleIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" {...props}>
-      <path
-        fill="#4285F4"
-        d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
-      />
-      <path
-        fill="#34A853"
-        d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"
-      />
-      <path
-        fill="#FBBC05"
-        d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"
-      />
-      <path
-        fill="#EA4335"
-        d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
-      />
-    </svg>
-  );
-}
-
 export default function ReviewsSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -171,51 +148,11 @@ export default function ReviewsSlider() {
 
   return (
     <section
-      className="py-16 sm:py-24 bg-white border-t border-slate-200/80 overflow-hidden"
+      className="py-12 sm:py-16 bg-white border-t border-slate-200/80 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with Google Rating Badge */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 sm:mb-16">
-          <div className="text-center md:text-left space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider">
-              <GoogleIcon className="w-4 h-4" />
-              <span>Google Reviews & Attestations</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-slate-900 tracking-tight">
-              Trusted by Spokane Residents & Owners
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-xl">
-              See what tenants and property owners have to say about our
-              hands-on, boutique property management service.
-            </p>
-          </div>
-
-          {/* Google Summary Badge */}
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 flex items-center gap-4 shadow-xs shrink-0">
-            <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-xs">
-              <GoogleIcon className="w-7 h-7" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-black text-slate-900 font-serif">4.9</span>
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-amber-400 text-amber-400"
-                    />
-                  ))}
-                </div>
-              </div>
-              <p className="text-xs font-semibold text-slate-600 mt-0.5">
-                Over 120+ Verified Client Reviews
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Carousel Viewport */}
         <div
           className="relative"
@@ -241,20 +178,14 @@ export default function ReviewsSlider() {
                     <Quote className="absolute top-5 right-5 w-8 h-8 text-slate-100 group-hover:text-slate-200/70 transition-colors pointer-events-none" />
 
                     <div className="space-y-3">
-                      {/* Top: Stars & Google Icon */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1">
-                          {[...Array(review.rating)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="w-4 h-4 fill-amber-400 text-amber-400"
-                            />
-                          ))}
-                        </div>
-                        <div className="flex items-center gap-1 text-[11px] font-semibold text-slate-400">
-                          <GoogleIcon className="w-3.5 h-3.5" />
-                          <span>Google</span>
-                        </div>
+                      {/* Top: Stars */}
+                      <div className="flex items-center gap-1">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-amber-400 text-amber-400"
+                          />
+                        ))}
                       </div>
 
                       {/* Headline */}
@@ -281,7 +212,7 @@ export default function ReviewsSlider() {
                             <span className="text-xs sm:text-sm font-bold text-slate-900">
                               {review.author}
                             </span>
-                            <span title="Verified Reviewer" className="inline-flex">
+                            <span title="Verified Client" className="inline-flex">
                               <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 fill-blue-50 shrink-0" />
                             </span>
                           </div>
@@ -301,7 +232,7 @@ export default function ReviewsSlider() {
             </div>
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Controls */}
           <div className="flex items-center justify-between pt-8 sm:pt-10">
             {/* Dots */}
             <div className="flex items-center gap-2">

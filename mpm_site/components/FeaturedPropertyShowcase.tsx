@@ -79,9 +79,10 @@ export default function FeaturedPropertyShowcase() {
           </h2>
         </div>
 
-        {/* Showcase Card with Ridge CSS Border (#415161) */}
+        {/* Showcase Card with Square Ridge CSS Border (#415161) */}
         <div
-          className="max-w-6xl mx-auto rounded-3xl border-4 sm:border-[6px] border-[#415161] [border-style:ridge] bg-white shadow-xl overflow-hidden"
+          className="max-w-6xl mx-auto border-[6px] sm:border-[8px] border-[#415161] bg-white shadow-2xl overflow-hidden"
+          style={{ borderStyle: "ridge" }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
