@@ -189,8 +189,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Equal Housing Logo */}
-            <div className="pt-2">
+            {/* Equal Housing & Windermere Logos */}
+            <div className="pt-2 flex flex-col items-start gap-3">
               <div className="inline-flex items-center justify-center bg-white px-3 py-2 rounded-md shadow-sm border border-gray-200">
                 <Image
                   src="/uploads/6/6/2/9/66293977/published/3f2afb2fa017ece61be17e071104f5d4_3.png"
@@ -198,6 +198,15 @@ export default function Footer() {
                   width={97}
                   height={36}
                   className="w-[97px] h-auto object-contain"
+                />
+              </div>
+              <div className="inline-flex items-center justify-center bg-white p-2 rounded-md shadow-sm border border-gray-200">
+                <Image
+                  src="/uploads/6/6/2/9/66293977/windermere.png"
+                  alt="Windermere Real Estate Spokane"
+                  width={105}
+                  height={105}
+                  className="w-[105px] h-auto object-contain"
                 />
               </div>
             </div>
