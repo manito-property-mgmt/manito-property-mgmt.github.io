@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { Star, ChevronLeft, ChevronRight, CheckCircle2, Quote } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Review {
   id: number;
@@ -24,9 +24,9 @@ const reviewsData: Review[] = [
     avatarInitials: "SM",
     avatarColor: "bg-blue-600",
     rating: 5,
-    headline: "Fast maintenance and wonderful communication!",
+    headline: "Fast maintenance & great communication",
     content:
-      "Manito Property Management has been fantastic since the day we moved in. Any routine maintenance requests are addressed within 24 hours, the AppFolio online portal makes paying rent effortless, and the office staff is always friendly and professional. Wow, such good management! Best rental experience we've had in Spokane.",
+      "Maintenance is always handled within 24 hours and paying rent online is effortless. Best rental experience in Spokane!",
   },
   {
     id: 2,
@@ -36,9 +36,9 @@ const reviewsData: Review[] = [
     avatarInitials: "DP",
     avatarColor: "bg-emerald-600",
     rating: 5,
-    headline: "Stress-free management for our rental properties",
+    headline: "Stress-free management for owners",
     content:
-      "As out-of-state property owners, we needed a team we could completely rely on. Manito handles our tenant placement, lease enforcement, and property maintenance with total integrity. Monthly statements are crystal clear, and direct deposits are always prompt. Truly top-tier property management from true local experts!",
+      "Manito handles tenant placement and upkeep with total integrity. Clear monthly statements and always prompt deposits.",
   },
   {
     id: 3,
@@ -48,9 +48,9 @@ const reviewsData: Review[] = [
     avatarInitials: "MR",
     avatarColor: "bg-indigo-600",
     rating: 5,
-    headline: "Seamless application & move-in experience",
+    headline: "Seamless move-in experience",
     content:
-      "The QuickLeasePro application process was so easy and transparent. We toured the home, applied online, and received approval within two business days. The house was professionally cleaned and move-in ready. Wow, such good management! You rarely find rental companies that genuinely take pride in their homes.",
+      "The application was simple, approval took just two days, and the home was spotless and move-in ready.",
   },
   {
     id: 4,
@@ -60,9 +60,9 @@ const reviewsData: Review[] = [
     avatarInitials: "JH",
     avatarColor: "bg-amber-600",
     rating: 5,
-    headline: "Zero vacancy downtime & quality tenants",
+    headline: "Zero vacancy & quality tenants",
     content:
-      "They had our rental home photographed, listed on MLS, and leased to great tenants in less than two weeks. Their screening process is thorough and their market knowledge of Spokane rental rates is spot on. I couldn't be happier with their hands-on service and attentiveness.",
+      "Our property was listed and leased to great tenants in under two weeks. Spot-on pricing and thorough screening.",
   },
   {
     id: 5,
@@ -74,7 +74,7 @@ const reviewsData: Review[] = [
     rating: 5,
     headline: "Emergency repairs handled in hours",
     content:
-      "Our water heater had an issue on a Sunday evening. I called their 24/7 emergency dispatch line, and a licensed plumber was at our door in less than two hours to fix it. Fast response, respectful technicians, and honest property management. Highly recommend them to anyone looking to rent in Spokane.",
+      "Called dispatch on a Sunday and a plumber arrived in under two hours to fix our water heater. Dependable and fast.",
   },
   {
     id: 6,
@@ -84,9 +84,9 @@ const reviewsData: Review[] = [
     avatarInitials: "ER",
     avatarColor: "bg-rose-600",
     rating: 5,
-    headline: "Trusted partner for all my client referrals",
+    headline: "Trusted partner for client referrals",
     content:
-      "I refer all my real estate clients who need rental property management directly to Manito. They treat every home as if it were their own and keep owners thoroughly informed. Wow, such good management! Clients constantly thank me for introducing them to this boutique team.",
+      "They care for every home like their own and keep owners informed. Clients constantly thank me for introducing them.",
   },
 ];
 
@@ -104,7 +104,7 @@ export default function ReviewsSlider() {
     () => 1200
   );
 
-  const cardsPerView = windowWidth >= 1024 ? 3 : windowWidth >= 640 ? 2 : 1;
+  const cardsPerView = windowWidth >= 1024 ? 4 : windowWidth >= 640 ? 2 : 1;
   const maxIndex = Math.max(0, reviewsData.length - cardsPerView);
 
   const nextSlide = useCallback(() => {
@@ -148,7 +148,7 @@ export default function ReviewsSlider() {
 
   return (
     <section
-      className="py-12 sm:py-16 bg-white border-t border-slate-200/80 overflow-hidden"
+      className="py-8 sm:py-10 bg-white border-t border-slate-200/80 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -174,58 +174,26 @@ export default function ReviewsSlider() {
                   className="px-2.5 sm:px-3 flex-shrink-0"
                   style={{ width: `${100 / cardsPerView}%` }}
                 >
-                  <div className="h-full bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-xs hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between space-y-4 relative group">
-                    <Quote className="absolute top-5 right-5 w-8 h-8 text-slate-100 group-hover:text-slate-200/70 transition-colors pointer-events-none" />
-
-                    <div className="space-y-3">
-                      {/* Top: Stars */}
-                      <div className="flex items-center gap-1">
-                        {[...Array(review.rating)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="w-4 h-4 fill-amber-400 text-amber-400"
-                          />
-                        ))}
-                      </div>
-
-                      {/* Headline */}
-                      <h3 className="text-base font-bold text-slate-900 leading-snug">
-                        &ldquo;{review.headline}&rdquo;
-                      </h3>
-
-                      {/* Review Text */}
-                      <p className="text-sm text-slate-600 leading-relaxed line-clamp-5">
-                        {review.content}
-                      </p>
+                  <div className="h-full bg-white border border-slate-200/90 rounded-xl p-4 sm:p-5 shadow-xs hover:shadow-md hover:border-slate-300 transition-all flex flex-col space-y-2">
+                    {/* Top: Stars */}
+                    <div className="flex items-center gap-1">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
+                        />
+                      ))}
                     </div>
 
-                    {/* Author & Verification Footer */}
-                    <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`w-10 h-10 rounded-full ${review.avatarColor} text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs`}
-                        >
-                          {review.avatarInitials}
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-1.5">
-                            <span className="text-xs sm:text-sm font-bold text-slate-900">
-                              {review.author}
-                            </span>
-                            <span title="Verified Client" className="inline-flex">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 fill-blue-50 shrink-0" />
-                            </span>
-                          </div>
-                          <p className="text-[11px] text-slate-500 font-medium">
-                            {review.role}
-                          </p>
-                        </div>
-                      </div>
+                    {/* Headline */}
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                      {review.headline}
+                    </h3>
 
-                      <span className="text-[11px] text-slate-400 whitespace-nowrap">
-                        {review.timeAgo}
-                      </span>
-                    </div>
+                    {/* Review Text */}
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {review.content}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -233,7 +201,7 @@ export default function ReviewsSlider() {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex items-center justify-between pt-8 sm:pt-10">
+          <div className="flex items-center justify-between pt-5 sm:pt-6">
             {/* Dots */}
             <div className="flex items-center gap-2">
               {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
