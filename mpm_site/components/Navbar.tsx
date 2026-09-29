@@ -31,7 +31,6 @@ const leftNavItems: NavItem[] = [
     label: "Properties",
     children: [
       { label: "Available Rentals", href: "/available-rentals/" },
-      { label: "Listings (Beta)", href: "/listings-beta/" },
       { label: "Featured Properties", href: "/featured-properties/" },
     ],
   },
@@ -187,17 +186,17 @@ export default function Navbar() {
                   type="button"
                   onClick={() => toggleDropdown(item.label)}
                   aria-expanded={isOpen}
-                  className={`group relative inline-flex items-center gap-1 px-2.5 py-2 text-[11px] xl:text-xs 2xl:text-[13px] font-bold tracking-wider uppercase transition-colors rounded-md ${
+                  className={`group relative inline-flex items-center gap-1 px-2.5 py-2 text-xs 2xl:text-sm font-bold tracking-wider uppercase transition-colors rounded-md ${
                     isSelected
-                      ? "text-[#415161]"
-                      : "text-gray-700 hover:text-[#415161]"
+                      ? "text-[#597db9]"
+                      : "text-gray-700 hover:text-[#597db9]"
                   }`}
                 >
                   <span className="relative py-1">
                     {item.label}
                     {/* Animated Underline Indicator (matches hammercoffee.com) */}
                     <span
-                      className={`absolute -bottom-0.5 left-0 w-full h-[2px] bg-[#415161] transform transition-all duration-300 origin-center ${
+                      className={`absolute -bottom-0.5 left-0 w-full h-[2px] bg-[#597db9] transform transition-all duration-300 origin-center ${
                         isSelected
                           ? "scale-x-100 opacity-100"
                           : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
@@ -206,7 +205,7 @@ export default function Navbar() {
                   </span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 text-[#415161]" : "text-gray-400 group-hover:text-[#415161]"
+                      isOpen ? "rotate-180 text-[#597db9]" : "text-gray-400 group-hover:text-[#597db9]"
                     }`}
                   />
                 </button>
@@ -227,10 +226,10 @@ export default function Navbar() {
                               href={child.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center justify-between px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-colors text-gray-700 hover:bg-slate-50 hover:text-[#415161] group"
+                              className="flex items-center justify-between px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-colors text-gray-700 hover:bg-slate-50 hover:text-[#597db9] group"
                             >
                               <span>{child.label}</span>
-                              <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#415161]" />
+                              <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#597db9]" />
                             </a>
                           );
                         }
@@ -242,8 +241,8 @@ export default function Navbar() {
                             href={child.href}
                             className={`block px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-colors ${
                               childActive
-                                ? "bg-slate-100 text-[#415161] font-bold"
-                                : "text-gray-700 hover:bg-slate-50 hover:text-[#415161]"
+                                ? "bg-slate-100 text-[#597db9] font-bold"
+                                : "text-gray-700 hover:bg-slate-50 hover:text-[#597db9]"
                             }`}
                           >
                             {child.label}
@@ -261,17 +260,17 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href!}
-              className={`group relative px-2.5 py-2 text-[11px] xl:text-xs 2xl:text-[13px] font-bold tracking-wider uppercase transition-colors rounded-md ${
+              className={`group relative px-2.5 py-2 text-xs 2xl:text-sm font-bold tracking-wider uppercase transition-colors rounded-md ${
                 isSelected
-                  ? "text-[#415161]"
-                  : "text-gray-700 hover:text-[#415161]"
+                  ? "text-[#597db9]"
+                  : "text-gray-700 hover:text-[#597db9]"
               }`}
             >
               <span className="relative py-1">
                 {item.label}
                 {/* Animated Underline Indicator (matches hammercoffee.com) */}
                 <span
-                  className={`absolute -bottom-0.5 left-0 w-full h-[2px] bg-[#415161] transform transition-all duration-300 origin-center ${
+                  className={`absolute -bottom-0.5 left-0 w-full h-[2px] bg-[#597db9] transform transition-all duration-300 origin-center ${
                     isSelected
                       ? "scale-x-100 opacity-100"
                       : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
@@ -295,7 +294,7 @@ export default function Navbar() {
       }`}
     >
       {/* Top Brand Accent Stripe (matches hammercoffee's .header-stripe) */}
-      <div className="w-full h-[3px] bg-[#415161]" />
+      <div className="w-full h-[3px] bg-[#597db9]" />
 
       {/* Main Navigation Bar */}
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -364,7 +363,7 @@ export default function Navbar() {
                 href="https://manitopm.quickleasepro.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1 px-3.5 py-1 text-[10px] xl:text-[11px] font-bold tracking-wider uppercase text-white bg-[#415161] hover:bg-[#313f4d] rounded-full shadow-sm hover:shadow transition-all duration-200 whitespace-nowrap min-w-[100px]"
+                className="inline-flex items-center justify-center gap-1 px-3.5 py-1 text-xs font-bold tracking-wider uppercase text-white bg-[#597db9] hover:bg-[#486b9f] rounded-full shadow-sm hover:shadow transition-all duration-200 whitespace-nowrap min-w-[100px]"
               >
                 <FileText className="w-3 h-3" />
                 <span>Apply Now</span>
@@ -380,18 +379,18 @@ export default function Navbar() {
                   type="button"
                   onClick={() => toggleDropdown("Login")}
                   aria-expanded={openDropdown === "Login"}
-                  className={`w-full inline-flex items-center justify-center gap-1 px-3 py-0.5 text-[10px] xl:text-[11px] font-bold tracking-wider uppercase transition-colors rounded-full border whitespace-nowrap min-w-[100px] ${
+                  className={`w-full inline-flex items-center justify-center gap-1 px-3 py-1 text-xs font-bold tracking-wider uppercase transition-colors rounded-full border whitespace-nowrap min-w-[100px] ${
                     openDropdown === "Login"
-                      ? "bg-slate-100 text-[#415161] border-gray-300"
-                      : "border-gray-200 text-gray-700 hover:text-[#415161] hover:border-[#415161]/40 hover:bg-gray-50"
+                      ? "bg-slate-100 text-[#597db9] border-gray-300"
+                      : "border-gray-200 text-gray-700 hover:text-[#597db9] hover:border-[#597db9]/40 hover:bg-gray-50"
                   }`}
                 >
-                  <User className="w-3 h-3 text-[#415161]" />
+                  <User className="w-3 h-3 text-[#597db9]" />
                   <span>Login</span>
                   <ChevronDown
                     className={`w-3 h-3 transition-transform duration-200 ${
                       openDropdown === "Login"
-                        ? "rotate-180 text-[#415161]"
+                        ? "rotate-180 text-[#597db9]"
                         : "text-gray-400"
                     }`}
                   />
@@ -411,10 +410,10 @@ export default function Navbar() {
                         rel="noopener noreferrer"
                         className="block px-4 py-2 hover:bg-slate-50 transition-colors group"
                       >
-                        <div className="text-xs font-bold uppercase tracking-wider text-gray-800 group-hover:text-[#415161]">
+                        <div className="text-xs font-bold uppercase tracking-wider text-gray-800 group-hover:text-[#597db9]">
                           Tenant Login
                         </div>
-                        <div className="text-[11px] text-gray-500 font-normal">
+                        <div className="text-xs text-gray-500 font-normal">
                           Pay rent & maintenance requests
                         </div>
                       </a>
@@ -425,27 +424,27 @@ export default function Navbar() {
                         rel="noopener noreferrer"
                         className="block px-4 py-2 hover:bg-slate-50 transition-colors group"
                       >
-                        <div className="text-xs font-bold uppercase tracking-wider text-gray-800 group-hover:text-[#415161]">
+                        <div className="text-xs font-bold uppercase tracking-wider text-gray-800 group-hover:text-[#597db9]">
                           Owner Login
                         </div>
-                        <div className="text-[11px] text-gray-500 font-normal">
+                        <div className="text-xs text-gray-500 font-normal">
                           Monthly statements & financials
                         </div>
                       </a>
 
                       <div className="my-1.5 border-t border-gray-200" />
 
-                      <div className="px-4 py-1 flex items-center justify-between text-[11px]">
+                      <div className="px-4 py-1 flex items-center justify-between text-xs">
                         <Link
                           href="/tenant-portal/"
-                          className="text-[#415161] hover:text-blue-600 hover:underline font-medium"
+                          className="text-[#597db9] hover:text-[#ef8329] hover:underline font-medium"
                         >
                           Tenant Portal Info
                         </Link>
                         <span className="text-gray-300">•</span>
                         <Link
                           href="/owner-portal/"
-                          className="text-[#415161] hover:text-blue-600 hover:underline font-medium"
+                          className="text-[#597db9] hover:text-[#ef8329] hover:underline font-medium"
                         >
                           Owner Portal Info
                         </Link>
@@ -463,7 +462,7 @@ export default function Navbar() {
               href="https://manitopm.quickleasepro.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] font-bold uppercase tracking-wider bg-[#415161] hover:bg-[#313f4d] text-white px-3.5 py-1.5 rounded-full shadow-sm transition"
+              className="text-xs font-bold uppercase tracking-wider bg-[#597db9] hover:bg-[#486b9f] text-white px-3.5 py-1.5 rounded-full shadow-sm transition"
             >
               Apply Now
             </a>
@@ -510,7 +509,7 @@ export default function Navbar() {
                       }
                       className="w-full flex items-center justify-between py-2 text-sm font-bold uppercase tracking-wider text-gray-800"
                     >
-                      <span className={active ? "text-[#415161]" : ""}>
+                      <span className={active ? "text-[#597db9]" : ""}>
                         {item.label}
                       </span>
                       <ChevronDown
@@ -545,7 +544,7 @@ export default function Navbar() {
                               onClick={closeMobile}
                               className={`block py-1.5 text-xs font-medium uppercase tracking-wide ${
                                 pathname.startsWith(child.href)
-                                  ? "text-[#415161] font-bold"
+                                  ? "text-[#597db9] font-bold"
                                   : "text-gray-600 hover:text-black"
                               }`}
                             >
@@ -565,7 +564,7 @@ export default function Navbar() {
                     href={item.href!}
                     onClick={closeMobile}
                     className={`block py-2 text-sm font-bold uppercase tracking-wider ${
-                      active ? "text-[#415161]" : "text-gray-800 hover:text-[#415161]"
+                      active ? "text-[#597db9]" : "text-gray-800 hover:text-[#597db9]"
                     }`}
                   >
                     {item.label}

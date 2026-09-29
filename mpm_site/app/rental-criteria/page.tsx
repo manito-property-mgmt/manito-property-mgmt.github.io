@@ -65,123 +65,123 @@ export default function RentalCriteriaPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
           {/* 1. Application Process & Fees */}
-        <div className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-5">
-          <div className="border-b border-gray-100 pb-3">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-              Application Process & Fees
-            </h2>
-          </div>
-          <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
-            <p>
-              To apply for tenancy with Manito Property Management, please complete
-              an online application. Typical processing time for an application is{" "}
-              <strong>3-5 business days</strong>. Once the screening report is
-              completed by AcraNet, we will contact you on the phone number provided
-              on your application.
-            </p>
-            <p>
-              The application fee is $56.00 per adult, payable directly to AcraNet with a debit or credit card. If a co-signer or guarantor is required, the co-signer application fee is $20.00 per adult.
-            </p>
-            <div className="text-xs text-gray-600 bg-slate-50 p-4 rounded-lg border border-slate-200 leading-relaxed">
-              <strong className="text-gray-800">Screening & Occupancy Notice:</strong> Manito Property Management does not accept
-              comprehensive portable reusable tenant screening reports. If approved,
-              a $150 administration/document processing fee is due prior to taking
-              occupancy. Security deposit is equivalent to one month’s rent.
+          <div className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-5">
+            <div className="border-b border-gray-100 pb-3">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+                Application Process & Fees
+              </h2>
+            </div>
+            <div className="space-y-4 text-base text-gray-700 leading-relaxed">
+              <p>
+                To apply for tenancy with Manito Property Management, please complete
+                an online application. Typical processing time for an application is{" "}
+                <strong className="font-semibold text-gray-900">3-5 business days</strong>. Once the screening report is
+                completed by AcraNet, we will contact you on the phone number provided
+                on your application.
+              </p>
+              <p>
+                The application fee is $56.00 per adult, payable directly to AcraNet with a debit or credit card. If a co-signer or guarantor is required, the co-signer application fee is $20.00 per adult.
+              </p>
+              <div className="text-sm text-gray-700 bg-slate-50 p-4 rounded-lg border border-slate-200 leading-relaxed">
+                <strong className="text-gray-900">Screening & Occupancy Notice:</strong> Manito Property Management does not accept
+                comprehensive portable reusable tenant screening reports. If approved,
+                a $150 administration/document processing fee is due prior to taking
+                occupancy. Security deposit is equivalent to one month’s rent.
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* 2. Standard Approval Criteria */}
-        <div className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
-          <div className="border-b border-gray-100 pb-3">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-              Standard Approval Criteria
-            </h2>
+          {/* 2. Standard Approval Criteria */}
+          <div className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
+            <div className="border-b border-gray-100 pb-3">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+                Standard Approval Criteria
+              </h2>
+            </div>
+
+            <div className="space-y-2.5 text-base text-gray-700 leading-relaxed">
+              <p>
+                A credit score below 650 will require a qualified co-signer.
+              </p>
+              <p>
+                Gross verified monthly household income must equal at least 2.5 times the monthly rent.
+              </p>
+            </div>
+
+            {/* Causes for Denial */}
+            <div className="pt-2 space-y-3">
+              <h3 className="text-lg font-bold text-gray-900">
+                Conditions That May Result in Denial
+              </h3>
+              <ul className="space-y-2.5 text-base text-gray-700 leading-relaxed">
+                {denialCriteria.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <span className="text-gray-400 font-bold select-none mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Conditional Approval Conditions */}
+            <div className="pt-4 border-t border-gray-100 space-y-3">
+              <h3 className="text-lg font-bold text-gray-900">
+                Conditional Approvals
+              </h3>
+              <p className="text-sm text-gray-600">
+                Any application that does not result in a direct denial or straight approval may be conditionally approved under terms including:
+              </p>
+              <ul className="space-y-2.5 text-base text-gray-700 leading-relaxed pt-1">
+                {conditionalApprovals.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <span className="text-gray-400 font-bold select-none mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Consumer Rights & AcraNet Dispute */}
+            <div className="pt-4 border-t border-gray-100 text-sm text-gray-600 leading-relaxed">
+              In the event of a denial or other adverse action, you have the legal right under the Fair Credit Reporting Act to obtain a free copy of the consumer report and dispute the accuracy of any information appearing within it. To request a copy or dispute findings, contact <strong className="text-gray-900">AcraNet at (509) 324-1249</strong>.
+            </div>
           </div>
 
-          <div className="space-y-2 text-sm text-gray-700 leading-relaxed">
-            <p>
-              A credit score below 650 will require a qualified co-signer.
-            </p>
-            <p>
-              Gross verified monthly household income must equal at least 2.5 times the monthly rent.
-            </p>
-          </div>
+          {/* 3. Resident Benefits Package (RBP) */}
+          <div className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-5">
+            <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+                Resident Benefits Package (RBP)
+              </h2>
+              <span className="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-bold rounded-md border border-slate-200">
+                $19.50 / Month
+              </span>
+            </div>
 
-          {/* Causes for Denial */}
-          <div className="pt-2 space-y-3">
-            <h3 className="text-base font-bold text-gray-900">
-              Conditions That May Result in Denial
-            </h3>
-            <ul className="space-y-2 text-sm text-gray-700">
-              {denialCriteria.map((item, idx) => (
+            <p className="text-base text-gray-700 leading-relaxed">
+              The Manito Property Management Resident Benefits Package (RBP) delivers
+              savings and convenient, professional services that make taking care of
+              your home second nature. By applying, Applicant agrees to be automatically
+              enrolled into the required program payable monthly with rent.
+            </p>
+
+            <ul className="space-y-2.5 text-base text-gray-700 leading-relaxed pt-1">
+              {rbpFeatures.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
                   <span className="text-gray-400 font-bold select-none mt-0.5">•</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
 
-          {/* Conditional Approval Conditions */}
-          <div className="pt-4 border-t border-gray-100 space-y-3">
-            <h3 className="text-base font-bold text-gray-900">
-              Conditional Approvals
-            </h3>
-            <p className="text-xs text-gray-600">
-              Any application that does not result in a direct denial or straight approval may be conditionally approved under terms including:
+            <p className="text-sm text-gray-600 pt-3 border-t border-gray-100 leading-relaxed">
+              <strong className="text-gray-900">Consent to Receive SMS Messages:</strong> Resident consents to receive
+              transactional, account, and maintenance SMS communications from Landlord and RBP
+              providers. Standard message and data rates may apply.
             </p>
-            <ul className="space-y-2 text-sm text-gray-700 pt-1">
-              {conditionalApprovals.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-2.5">
-                  <span className="text-gray-400 font-bold select-none mt-0.5">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-
-          {/* Consumer Rights & AcraNet Dispute */}
-          <div className="pt-4 border-t border-gray-100 text-xs text-gray-500 leading-relaxed">
-            In the event of a denial or other adverse action, you have the legal right under the Fair Credit Reporting Act to obtain a free copy of the consumer report and dispute the accuracy of any information appearing within it. To request a copy or dispute findings, contact <strong>AcraNet at (509) 324-1249</strong>.
-          </div>
-        </div>
-
-        {/* 3. Resident Benefits Package (RBP) */}
-        <div className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-5">
-          <div className="flex items-center justify-between border-b border-gray-100 pb-3">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-              Resident Benefits Package (RBP)
-            </h2>
-            <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md border border-slate-200">
-              $19.50 / Month
-            </span>
-          </div>
-
-          <p className="text-sm text-gray-700 leading-relaxed">
-            The Manito Property Management Resident Benefits Package (RBP) delivers
-            savings and convenient, professional services that make taking care of
-            your home second nature. By applying, Applicant agrees to be automatically
-            enrolled into the required program payable monthly with rent.
-          </p>
-
-          <ul className="space-y-2 text-sm text-gray-700 pt-1">
-            {rbpFeatures.map((item, idx) => (
-              <li key={idx} className="flex items-start gap-2.5">
-                <span className="text-gray-400 font-bold select-none mt-0.5">•</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <p className="text-xs text-gray-500 pt-3 border-t border-gray-100 leading-relaxed">
-            <strong>Consent to Receive SMS Messages:</strong> Resident consents to receive
-            transactional, account, and maintenance SMS communications from Landlord and RBP
-            providers. Standard message and data rates may apply.
-          </p>
         </div>
       </div>
-    </div>
   </div>
 );
 }

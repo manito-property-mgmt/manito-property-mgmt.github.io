@@ -27,12 +27,7 @@ export default function SitemapPage() {
         {
           title: "Available Rentals",
           href: "/available-rentals/",
-          description: "Browse available Spokane area rental homes, duplexes, and apartments.",
-        },
-        {
-          title: "Listings (Beta)",
-          href: "/listings-beta/",
-          description: "Interactive map and filtered search of all current rental vacancies.",
+          description: "Interactive map, photo galleries, and filtered search of all available rental homes and vacancies.",
         },
         {
           title: "Rental Criteria & Applications",

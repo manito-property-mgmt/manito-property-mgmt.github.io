@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import DevBanner from "./DevBanner";
 
 function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -13,7 +14,7 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1f2937] text-gray-300 border-t border-gray-800">
+    <footer className="bg-[#242528] text-gray-300 border-t border-[#363638]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
@@ -38,14 +39,14 @@ export default function Footer() {
                 href="https://www.facebook.com/search/top?q=manito%20property%20management"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center transition-transform hover:scale-105"
+                className="w-9 h-9 rounded-full bg-[#597db9] hover:bg-[#486b9f] text-white flex items-center justify-center transition-transform hover:scale-105"
                 aria-label="Visit Manito Property Management on Facebook"
               >
                 <FacebookIcon className="w-5 h-5" />
               </a>
               <a
                 href="mailto:mpropertymanager@windermere.com"
-                className="w-9 h-9 rounded-full bg-gray-700 hover:bg-gray-600 text-white flex items-center justify-center transition-transform hover:scale-105"
+                className="w-9 h-9 rounded-full bg-[#363638] hover:bg-[#48484a] text-white flex items-center justify-center transition-transform hover:scale-105"
                 aria-label="Email Manito Property Management"
               >
                 <Mail className="w-5 h-5" />
@@ -188,8 +189,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Equal Housing Logo */}
-            <div className="pt-2">
+            {/* Equal Housing & Windermere Logos */}
+            <div className="pt-2 flex flex-col items-start gap-3">
               <div className="inline-flex items-center justify-center bg-white px-3 py-2 rounded-md shadow-sm border border-gray-200">
                 <Image
                   src="/uploads/6/6/2/9/66293977/published/3f2afb2fa017ece61be17e071104f5d4_3.png"
@@ -197,6 +198,15 @@ export default function Footer() {
                   width={97}
                   height={36}
                   className="w-[97px] h-auto object-contain"
+                />
+              </div>
+              <div className="inline-flex items-center justify-center bg-white p-2 rounded-md shadow-sm border border-gray-200">
+                <Image
+                  src="/uploads/6/6/2/9/66293977/windermere.png"
+                  alt="Windermere Real Estate Spokane"
+                  width={105}
+                  height={105}
+                  className="w-[105px] h-auto object-contain"
                 />
               </div>
             </div>
@@ -212,6 +222,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
+      <DevBanner />
     </footer>
   );
 }

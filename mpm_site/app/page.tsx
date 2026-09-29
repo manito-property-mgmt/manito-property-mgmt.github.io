@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import HeroBanner from "@/components/HeroBanner";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import FeaturedPropertyShowcase from "@/components/FeaturedPropertyShowcase";
+import ReviewsSlider from "@/components/ReviewsSlider";
 import { ExternalLink } from "lucide-react";
 
 
@@ -14,10 +16,13 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div>
-      {/* Hero Banner */}
+      {/* Tall Hero Backdrop with integrated 3D Featured Showcase */}
       <HeroBanner
         backgroundImage="/uploads/6/6/2/9/66293977/background-images/427901462.jpg"
-        overlayOpacity="bg-slate-900/60"
+        overlayOpacity="bg-gradient-to-b from-slate-950/80 via-slate-900/65 to-slate-950/85"
+        minHeight="min-h-[720px] sm:min-h-[780px] lg:min-h-[840px] xl:min-h-[880px]"
+        backgroundPosition="bg-center"
+        maxWidth="max-w-[1440px]"
         title={
           <span className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider">
             manito property management
@@ -43,10 +48,9 @@ export default function HomePage() {
             variant: "primary",
           },
         ]}
-      />
-
-      {/* Moving Portfolio Slideshow/Carousel */}
-      <PortfolioCarousel />
+      >
+        <PortfolioCarousel />
+      </HeroBanner>
 
       {/* Main 3 Feature Columns */}
       <section className="py-16 sm:py-20 bg-white">
@@ -57,7 +61,7 @@ export default function HomePage() {
               <div className="w-full flex justify-center">
                 <Link
                   href="/available-rentals/"
-                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e] group"
+                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#597db9] hover:bg-[#486b9f] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#486b9f] group"
                 >
                   <span>Available Now</span>
                   <ExternalLink className="w-4 h-4 shrink-0 text-white/90 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -74,7 +78,7 @@ export default function HomePage() {
               <div className="w-full flex justify-center">
                 <Link
                   href="/management-services/"
-                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e] group"
+                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#363638] hover:bg-[#262628] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#262628] group"
                 >
                   <span>Management Services</span>
                   <ExternalLink className="w-4 h-4 shrink-0 text-white/90 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -91,7 +95,7 @@ export default function HomePage() {
               <div className="w-full flex justify-center">
                 <Link
                   href="/real-estate-agent-services/"
-                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#415161] hover:bg-[#32404e] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#32404e] group"
+                  className="inline-flex items-center justify-center gap-2.5 w-full max-w-[310px] px-6 py-3.5 sm:py-4 rounded-lg bg-[#597db9] hover:bg-[#486b9f] text-white text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border border-[#486b9f] group"
                 >
                   <span>Real Estate Agents</span>
                   <ExternalLink className="w-4 h-4 shrink-0 text-white/90 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -105,6 +109,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Featured Luxury Property Showcase (Dynamically displays highest-priced vacancy) */}
+      <FeaturedPropertyShowcase />
+
+      {/* Client Reviews & Testimonials Slider */}
+      <ReviewsSlider />
     </div>
   );
 }

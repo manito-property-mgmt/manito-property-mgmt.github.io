@@ -104,7 +104,7 @@ export default function ContactUsPage() {
                   <br />
                   Spokane, WA 99203
                 </p>
-                <p className="text-[11px] text-gray-400 italic">
+                <p className="text-xs text-gray-400 italic">
                   Visits by appointment only
                 </p>
               </div>
@@ -155,7 +155,7 @@ export default function ContactUsPage() {
                     mpropertymanager@windermere.com
                   </a>
                 </p>
-                <p className="text-[11px] text-gray-400">
+                <p className="text-xs text-gray-400">
                   Closed major holidays
                 </p>
               </div>

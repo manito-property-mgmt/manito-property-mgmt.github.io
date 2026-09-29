@@ -1,11 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #415161;
-  --primary-hover: #313f4d;
-  --secondary: #727f97;
+  --primary: #597db9;
+  --primary-hover: #486b9f;
+  --primary-dark: #363638;
+  --accent-orange: #ef8329;
+  --accent-orange-hover: #d9701a;
+  --accent-peach: #f9ad5f;
+  --accent-olive: #7d7836;
+  --accent-gold: #c5a059;
+  --secondary: #5e7cae;
   --background: #ffffff;
-  --foreground: #374151;
+  --foreground: #363638;
 }
 
 body {
