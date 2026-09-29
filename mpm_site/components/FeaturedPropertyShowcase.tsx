@@ -109,7 +109,7 @@ export default function FeaturedPropertyShowcase() {
                 {/* Top Badges over image (only photo counter) */}
                 {photos.length > 1 && (
                   <div className="absolute top-4 right-4 z-10">
-                    <span className="px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white text-[11px] font-semibold tracking-wide border border-white/20 shadow-sm">
+                    <span className="px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white text-xs font-semibold tracking-wide border border-white/20 shadow-sm">
                       {activePhotoIndex + 1} / {photos.length} Photos
                     </span>
                   </div>
@@ -171,7 +171,7 @@ export default function FeaturedPropertyShowcase() {
                   {photos.length > 7 && (
                     <Link
                       href="/available-rentals/"
-                      className="px-3 py-2 text-[11px] font-bold text-gray-300 hover:text-white whitespace-nowrap bg-slate-800/80 hover:bg-slate-700 rounded-lg border border-slate-700 transition"
+                      className="px-3 py-2 text-xs font-bold text-gray-300 hover:text-white whitespace-nowrap bg-slate-800/80 hover:bg-slate-700 rounded-lg border border-slate-700 transition"
                     >
                       +{photos.length - 7} more
                     </Link>

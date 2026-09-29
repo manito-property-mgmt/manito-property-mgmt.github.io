@@ -230,7 +230,7 @@ export default function PortfolioCarousel() {
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-5 z-10 flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full bg-slate-950/70 backdrop-blur-md border border-white/20 text-white text-[11px] sm:text-xs font-semibold tracking-wide shadow-sm">
+                  <span className="px-3 py-1 rounded-full bg-slate-950/70 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-wide shadow-sm">
                     {property.type || "Spokane Residence"}
                   </span>
                 </div>

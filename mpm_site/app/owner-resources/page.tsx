@@ -95,7 +95,7 @@ export default function OwnerResourcesPage() {
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider">
+                    <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                       {item.source}
                     </span>
                     <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#415161] transition-colors" />

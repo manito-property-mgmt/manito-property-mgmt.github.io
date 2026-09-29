@@ -28,7 +28,7 @@ export default function DevBanner() {
       aria-label="Development environment preview banner"
       className="w-full bg-[#f59e0b] text-[#0f172a] border-t border-[#d97706] py-2 px-4 text-center text-xs font-semibold flex flex-wrap items-center justify-center gap-2 select-none"
     >
-      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950 text-amber-300 text-[10px] font-bold tracking-wider uppercase">
+      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950 text-amber-300 text-xs font-bold tracking-wider uppercase">
         <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
         Dev Environment
       </span>

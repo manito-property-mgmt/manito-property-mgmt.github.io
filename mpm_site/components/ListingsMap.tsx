@@ -95,7 +95,7 @@ export default function ListingsMap({
           <div style="
             background: ${isSelected ? "#1e293b" : "#415161"};
             color: #ffffff;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             padding: 4px 8px;
             border-radius: 9999px;
@@ -120,7 +120,7 @@ export default function ListingsMap({
 
       // Lightweight tooltip on hover (non-intrusive, doesn't pull up listing)
       marker.bindTooltip(
-        `<div style="font-family: inherit; font-size: 11px; font-weight: 600; padding: 2px 4px;">${item.rent} &bull; ${item.address}</div>`,
+        `<div style="font-family: inherit; font-size: 12px; font-weight: 600; padding: 2px 4px;">${item.rent} &bull; ${item.address}</div>`,
         { direction: "top", offset: [0, -14], opacity: 0.95 }
       );
 

@@ -446,7 +446,7 @@ export default function AvailableRentalsClient() {
           >
             {/* Bedrooms */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-500 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
                 Bedrooms
               </label>
               <select
@@ -465,7 +465,7 @@ export default function AvailableRentalsClient() {
 
             {/* Bathrooms */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-500 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
                 Bathrooms
               </label>
               <select
@@ -484,11 +484,11 @@ export default function AvailableRentalsClient() {
             {/* Price Range: Double-ended Slider with Dynamic Text Boxes */}
             <div className="col-span-2 sm:col-span-2 lg:col-span-2">
               <div className="flex items-center justify-between mb-1">
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-500">
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                   Price Range
                 </label>
                 {(minRent > PRICE_MIN_LIMIT || maxRent < PRICE_MAX_LIMIT) && (
-                  <span className="text-[11px] font-semibold text-[#415161]">
+                  <span className="text-xs font-semibold text-[#415161]">
                     ${minRent.toLocaleString()} – ${maxRent.toLocaleString()}
                   </span>
                 )}
@@ -625,7 +625,7 @@ export default function AvailableRentalsClient() {
 
             {/* City */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-500 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
                 City / Area
               </label>
               <select
@@ -644,7 +644,7 @@ export default function AvailableRentalsClient() {
 
             {/* Sort Order */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-500 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
                 Sort By
               </label>
               <select
@@ -669,7 +669,7 @@ export default function AvailableRentalsClient() {
               </span>
 
               {lastUpdated && (
-                <span className="text-gray-500 text-[11px] sm:text-xs font-normal inline-flex items-center gap-1.5">
+                <span className="text-gray-500 text-xs font-normal inline-flex items-center gap-1.5">
                   <span className="text-gray-300 hidden sm:inline">•</span>
                   <span>Last updated on: {lastUpdated}</span>
                 </span>
@@ -735,7 +735,7 @@ export default function AvailableRentalsClient() {
                     <span className="text-xs font-bold uppercase tracking-wider text-gray-600">
                       Spokane Area Map ({filteredListings.length} Pins)
                     </span>
-                    <span className="text-[11px] text-gray-400">Click any pin to filter</span>
+                    <span className="text-xs text-gray-400">Click any pin to filter</span>
                   </div>
                   <ListingsMap
                     listings={filteredListings}
@@ -832,12 +832,12 @@ export default function AvailableRentalsClient() {
 
                         {/* Top Overlays */}
                         <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none">
-                          <span className="px-2.5 py-1 bg-slate-900/80 backdrop-blur-xs text-white text-[11px] font-bold rounded-md uppercase tracking-wider">
+                          <span className="px-2.5 py-1 bg-slate-900/80 backdrop-blur-xs text-white text-xs font-bold rounded-md uppercase tracking-wider">
                             {property.available ? `Avail: ${property.available}` : "Available Now"}
                           </span>
 
                           {property.photos && property.photos.length > 1 && (
-                            <span className="px-2 py-0.5 bg-black/60 backdrop-blur-xs text-white text-[10px] font-medium rounded inline-flex items-center gap-1">
+                            <span className="px-2 py-0.5 bg-black/60 backdrop-blur-xs text-white text-xs font-medium rounded inline-flex items-center gap-1">
                               <Camera className="w-3 h-3" />
                               <span>{property.photos.length}</span>
                             </span>
@@ -847,7 +847,7 @@ export default function AvailableRentalsClient() {
                         {/* Price Tag Overlay at bottom of image */}
                         <div className="absolute bottom-2.5 left-2.5">
                           <span className="px-3 py-1 bg-[#415161]/95 text-white font-bold text-sm sm:text-base rounded-md shadow-sm">
-                            {property.rent} <span className="text-[10px] font-normal opacity-80">/ mo</span>
+                            {property.rent} <span className="text-xs font-normal opacity-80">/ mo</span>
                           </span>
                         </div>
                       </div>
@@ -1022,19 +1022,19 @@ export default function AvailableRentalsClient() {
               {/* Key Specs Bar */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 text-center">
                 <div>
-                  <span className="text-[11px] uppercase font-bold text-gray-500">Monthly Rent</span>
+                  <span className="text-xs uppercase font-bold text-gray-500">Monthly Rent</span>
                   <div className="text-xl font-bold text-gray-900">{modalProperty.rent}</div>
                 </div>
                 <div>
-                  <span className="text-[11px] uppercase font-bold text-gray-500">Beds / Baths</span>
+                  <span className="text-xs uppercase font-bold text-gray-500">Beds / Baths</span>
                   <div className="text-base font-bold text-gray-800">{modalProperty.bed_bath}</div>
                 </div>
                 <div>
-                  <span className="text-[11px] uppercase font-bold text-gray-500">Square Footage</span>
+                  <span className="text-xs uppercase font-bold text-gray-500">Square Footage</span>
                   <div className="text-base font-bold text-gray-800">{modalProperty.sqft ? `${modalProperty.sqft} sq ft` : "N/A"}</div>
                 </div>
                 <div>
-                  <span className="text-[11px] uppercase font-bold text-gray-500">Availability</span>
+                  <span className="text-xs uppercase font-bold text-gray-500">Availability</span>
                   <div className="text-base font-bold text-gray-800">{modalProperty.available || "Now"}</div>
                 </div>
               </div>
